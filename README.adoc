@@ -1,0 +1,15 @@
+= Interscript.js
+
+== Purpose
+
+The Interscript transliteration/transcription framework in JavaScript.
+Supports all Interscript maps.
+
+== Usage
+
+TBD.
+
+== Development
+
+Interscript.js is generated through Oval on the `interscript` gem in Ruby.
+

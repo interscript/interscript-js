@@ -110,3 +110,8 @@ The demo is included in the repository.
 
 Interscript.js is generated through Opal on the `interscript` gem in Ruby.
 
+=== Release process
+
+Bump version in package.json; commit and tag the repo appropriately; push to Github and call `npm publish`.
+
+TODO: Redo build process, generate JS as build artifact and bundle the code for browser and Node with proper use of exports.

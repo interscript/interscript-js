@@ -80,8 +80,7 @@ Here, *ISMap* is a global variable defined in the interscript.js file, it has th
 </script>
 -----------------
 
-Demo
-~~~~
+=== Demo
 The demo is included in the repository.
 
 

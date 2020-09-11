@@ -49,9 +49,17 @@
       };
 
       const system_code = sel.options[sel.selectedIndex].text;
-      var result = Opal.Interscript.$transliterate(system_code, input.value);
-      output.value = result;
-      alert('Successfully done!');
+      var httpRequest = new XMLHttpRequest();
+      httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+          Opal.Interscript.$load_map_json(system_code, httpRequest.responseText);
+          var result = Opal.Interscript.$transliterate(system_code, input.value);
+          output.value = result;
+          alert('Successfully done!');
+        }
+      };
+      httpRequest.open('GET', "dist/maps/"+system_code+".json", true);
+      httpRequest.send();
     }
   </script>
 </html>

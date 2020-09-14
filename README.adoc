@@ -10,14 +10,14 @@ Supports all Interscript maps.
 Install
 ~~~~~~~~
 * Download
-https://github.com/interscript/interscript-js/blob/master/dist/interscript.js[Interscript.js ^]
+https://github.com/interscript/interscript-js/blob/master/interscript.js[Interscript.js ^]
 file directly
 * Or in the terminal, you can clone the repository.
 +
 [source,shell]
 ----------------
 # git clone https://github.com/interscript/interscript-js.git
-# cd ./interscript-js/dist
+# cd ./interscript-js
 ----------------
 
 How To Use
@@ -72,7 +72,7 @@ Here, *InterscriptMaps* is a global variable defined in the interscript.js file,
         });
       }
     };
-    httpRequest.open('GET', "dist/maps/"+system_code+".json", true);
+    httpRequest.open('GET', "maps/"+system_code+".json", true);
     httpRequest.send();
 </script>
 -----------------

@@ -35,9 +35,9 @@ How To Use
   <body>
   </body>
   <script>
-  function func() {
+  Opal.Interscript.$on_load().then(function() {
       // here use interscript.js
-  }
+  });
   </script>
 </html>
 -----------------
@@ -47,9 +47,11 @@ How To Use
 [source,javascript]
 -----------------
 <script>
-    Object.keys(InterscriptMaps).forEach(system => {
-        document.write(`<option value="${system}" selected>${system}</option>`);
-    })
+    Opal.Interscript.$on_load().then(function() {
+        Object.keys(InterscriptMaps).forEach(system => {
+            document.write(`<option value="${system}" selected>${system}</option>`);
+        })
+    });
 </script>
 -----------------
 Here, *InterscriptMaps* is a global variable defined in the interscript.js file, it has the supported systems as json format. You can access this object from anywhere you want.
@@ -59,21 +61,23 @@ Here, *InterscriptMaps* is a global variable defined in the interscript.js file,
 [source,javascript]
 -----------------
 <script>
-    var system = 'bgnpcgn-rus-Cyrl-Latn-1947';
-    const system_code = sel.options[sel.selectedIndex].text;
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = function() {
-      if (httpRequest.readyState === XMLHttpRequest.DONE) {
-        Opal.Interscript.$load_map_json(system_code, httpRequest.responseText);
+    Opal.Interscript.$on_load().then(function() {
+        var system = 'bgnpcgn-rus-Cyrl-Latn-1947';
+        const system_code = sel.options[sel.selectedIndex].text;
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function() {
+          if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            Opal.Interscript.$load_map_json(system_code, httpRequest.responseText);
 
-        var data = JSON.parse(InterscriptMaps[system]);
-        data.map.rules.forEach(function(rule){
-          // write your code here to handle rule
-        });
-      }
-    };
-    httpRequest.open('GET', "maps/"+system_code+".json", true);
-    httpRequest.send();
+            var data = JSON.parse(InterscriptMaps[system]);
+            data.map.rules.forEach(function(rule){
+              // write your code here to handle rule
+            });
+          }
+        };
+        httpRequest.open('GET', "maps/"+system_code+".json", true);
+        httpRequest.send();
+    });
 </script>
 -----------------
 
@@ -82,19 +86,21 @@ Here, *InterscriptMaps* is a global variable defined in the interscript.js file,
 [source,javascript]
 -----------------
 <script>
-    var system = 'bgnpcgn-rus-Cyrl-Latn-1947';
-    var sample = 'Эх, тройка! птица тройка, кто тебя выдумал? знать, у бойкого народа ты могла только родиться, в той земле, что не любит шутить, а ровнем-гладнем разметнулась на полсвета, да и ступай считать версты, пока не зарябит тебе в очи. И не хитрый, кажись, дорожный снаряд, не железным схвачен винтом, а наскоро живьём с одним топором да долотом снарядил и собрал тебя ярославский расторопный мужик. Не в немецких ботфортах ямщик: борода да рукавицы, и сидит чёрт знает на чём; а привстал, да замахнулся, да затянул песню — кони вихрем, спицы в колесах смешались в один гладкий круг, только дрогнула дорога, да вскрикнул в испуге остановившийся пешеход — и вон она понеслась, понеслась, понеслась! Н.В. Гоголь';
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = function() {
-      if (httpRequest.readyState === XMLHttpRequest.DONE) {
-        Opal.Interscript.$load_map_json(system, httpRequest.responseText);
+    Opal.Interscript.$on_load().then(function() {
+        var system = 'bgnpcgn-rus-Cyrl-Latn-1947';
+        var sample = 'Эх, тройка! птица тройка, кто тебя выдумал? знать, у бойкого народа ты могла только родиться, в той земле, что не любит шутить, а ровнем-гладнем разметнулась на полсвета, да и ступай считать версты, пока не зарябит тебе в очи. И не хитрый, кажись, дорожный снаряд, не железным схвачен винтом, а наскоро живьём с одним топором да долотом снарядил и собрал тебя ярославский расторопный мужик. Не в немецких ботфортах ямщик: борода да рукавицы, и сидит чёрт знает на чём; а привстал, да замахнулся, да затянул песню — кони вихрем, спицы в колесах смешались в один гладкий круг, только дрогнула дорога, да вскрикнул в испуге остановившийся пешеход — и вон она понеслась, понеслась, понеслась! Н.В. Гоголь';
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function() {
+          if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            Opal.Interscript.$load_map_json(system, httpRequest.responseText);
 
-        var result = Opal.Interscript.$transliterate(system, sample);
-        console.log(result);
-      }
-    };
-    httpRequest.open('GET', "maps/"+system+".json", true);
-    httpRequest.send();
+            var result = Opal.Interscript.$transliterate(system, sample);
+            console.log(result);
+          }
+        };
+        httpRequest.open('GET', "maps/"+system+".json", true);
+        httpRequest.send();
+    });
 </script>
 -----------------
 

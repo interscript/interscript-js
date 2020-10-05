@@ -11,15 +11,6 @@
       <div class="panel-input">
         <label>System code: </label>
         <select id="sc">
-          <script>
-           Object.keys(InterscriptMaps).sort().forEach(sc => {
-             if (sc == "bgnpcgn-rus-Cyrl-Latn-1947") {
-              document.write(`<option value="${sc}" selected>${sc}</option>`);
-             } else {
-              document.write(`<option value="${sc}">${sc}</option>`);
-             }
-           })
-          </script>
         </select>
       </div>
       <div class="panel-input">
@@ -38,6 +29,17 @@
     </div>
   </body>
   <script>
+    Opal.Interscript.$on_load().then(function() {
+      var select = document.getElementById("sc");
+      Object.keys(InterscriptMaps).forEach(sc => {
+        if (sc == "bgnpcgn-rus-Cyrl-Latn-1947") {
+          select.innerHTML += `<option value="${sc}" selected>${sc}</option>`;
+        } else {
+          select.innerHTML += `<option value="${sc}">${sc}</option>`;
+        }
+      })
+    });
+
     function convert(){
       var input = document.getElementById("src"),
           output = document.getElementById("tar"),

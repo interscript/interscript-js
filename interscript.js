@@ -25249,6 +25249,8 @@ Opal.global.InterscriptMaps = {
   
     "acadsin-zho-Hani-Latn-2002": null,
   
+    "bgnpcgn-uzb-Cyrl-Latn-2000": null,
+  
     "sasm-mon-Mong-Latn-phonetic-1978": null,
   
     "alalc-ara-Arab-Latn-1997": null,
@@ -25269,6 +25271,8 @@ Opal.global.InterscriptMaps = {
   
     "bgnpcgn-ell-Grek-Latn-1996": null,
   
+    "alalc-tam-Taml-Latn-2011": null,
+  
     "dos-nep-Deva-Latn-1997": null,
   
     "royin-tha-Thai-Latn-1939-generic": null,
@@ -25288,6 +25292,8 @@ Opal.global.InterscriptMaps = {
     "iso-jpn-Hrkt-Latn-3602-1989": null,
   
     "din-mar-Deva-Latn-33904-2018": null,
+  
+    "bgnpcgn-che-Cyrl-Latn-2008": null,
   
     "kp-kor-Hang-Latn-2002": null,
   
@@ -25329,6 +25335,8 @@ Opal.global.InterscriptMaps = {
   
     "var-san-Deva-Latn-iast-1912": null,
   
+    "alalc-mal-Mlym-Latn-2012": null,
+  
     "iso-prs-Arab-Latn-233-3-1999": null,
   
     "bgna-bul-Cyrl-Latn-2009": null,
@@ -25359,6 +25367,8 @@ Opal.global.InterscriptMaps = {
   
     "iso-ara-Arab-Latn-233-1984": null,
   
+    "bgnpcgn-tgk-Cyrl-Latn-1994": null,
+  
     "alalc-hin-Deva-Latn-1997": null,
   
     "iso-nep-Deva-Latn-15919-2001": null,
@@ -25384,6 +25394,8 @@ Opal.global.InterscriptMaps = {
     "mvd-bel-Cyrl-Latn-2008": null,
   
     "un-hin-Deva-Latn-2016": null,
+  
+    "bgnpcgn-per-Arab-Latn-1958": null,
   
     "din-grc-Grek-Latn-31634-2011-t1": null,
   
@@ -25443,6 +25455,8 @@ Opal.global.InterscriptMaps = {
   
     "iso-rus-Cyrl-Latn-9-1995": null,
   
+    "alalc-pan-Guru-Latn-2011": null,
+  
     "alalc-pra-Deva-Latn-2012": null,
   
     "mvd-rus-Cyrl-Latn-2010": null,
@@ -25481,6 +25495,8 @@ Opal.global.InterscriptMaps = {
   
     "mvd-rus-Cyrl-Latn-2008": null,
   
+    "bgnpcgn-tat-Cyrl-Latn-2007": null,
+  
     "icao-mkd-Cyrl-Latn-9303": null,
   
     "din-san-Deva-Latn-33904-2018": null,
@@ -25498,6 +25514,8 @@ Opal.global.InterscriptMaps = {
     "var-jpn-Hrkt-Latn-hepburn-1954": null,
   
     "din-kat-Geor-Latn-32707-2010": null,
+  
+    "alalc-sin-Sinh-Latn-2011": null,
   
     "bgnpcgn-aze-Cyrl-Latn-1993": null,
   
@@ -25569,6 +25587,8 @@ Opal.global.InterscriptMaps = {
   
     "bgnpcgn-kor-Hang-Latn-kn-1945": null,
   
+    "alalc-per-Arab-Latn-1997": null,
+  
     "elot-ell-Grek-Latn-743-2001-tl": null,
   
     "ua-ukr-Cyrl-Latn-2010": null,
@@ -25605,6 +25625,8 @@ Opal.global.InterscriptMaps = {
   
     "odni-ukr-Cyrl-Latn-2015": null,
   
+    "alalc-guj-Gujr-Latn-2011": null,
+  
     "mvd-bel-Cyrl-Latn-2010": null,
   
     "icao-rus-Cyrl-Latn-9303": null,
@@ -25612,6 +25634,8 @@ Opal.global.InterscriptMaps = {
     "bgnpcgn-kat-Geor-Latn-2009": null,
   
     "var-kor-Hang-Hang-jamo": null,
+  
+    "alalc-guj-Gujr-Latn-1997": null,
   
     "alalc-ben-Beng-Latn-2017": null,
   
@@ -25651,6 +25675,8 @@ Opal.global.InterscriptMaps = {
   
     "un-rus-Cyrl-Latn-1987": null,
   
+    "bgnpcgn-uzb-Cyrl-Latn-1979": null,
+  
     "un-ara-Arab-Latn-1972": null,
   
     "bgnpcgn-nep-Deva-Latn-2011": null,
@@ -25674,6 +25700,10 @@ Opal.global.InterscriptMaps = {
     "var-pra-Deva-Latn-iast-1912": null,
   
     "iso-kor-Hang-Latn-1996-method1": null,
+  
+    "bgnpcgn-rue-Cyrl-Latn-2016": null,
+  
+    "odni-che-Cyrl-Latn-2015": null,
   
     "bgnpcgn-ara-Arab-Latn-1956": null,
   
@@ -31931,7 +31961,7 @@ Opal.modules["interscript/opal"] = function(Opal) {
   }
   var self = Opal.top, $nesting = [], nil = Opal.nil, $$$ = Opal.const_get_qualified, $$ = Opal.const_get_relative, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $truthy = Opal.truthy, $hash2 = Opal.hash2, $send = Opal.send, $klass = Opal.klass;
 
-  Opal.add_stubs(['$require', '$grow', '$memory', '$library', '$[]', '$==', '$class', '$reset', '$match?', '$new', '$[]=', '$-', '$+', '$each', '$load', '$dump']);
+  Opal.add_stubs(['$require', '$grow', '$memory', '$library', '$[]', '$match?', '$new', '$[]=', '$-', '$+', '$each', '$load', '$dump']);
   
   self.$require("onigmo");
   self.$require("onigmo/core_ext");
@@ -31955,11 +31985,7 @@ Opal.modules["interscript/opal"] = function(Opal) {
         
         self.cache = ($truthy($a = self.cache) ? $a : $hash2([], {}));
         if ($truthy((s = self.cache['$[]'](regexpstring)))) {
-          if (s.$class()['$==']($$$($$($nesting, 'Onigmo'), 'Regexp'))) {
-            return s.$reset()
-          } else {
-            return s
-          }
+          return s
         } else if ($truthy(/[\\$^\[\]]|\(\?/['$match?'](regexpstring))) {
           
           $writer = [regexpstring, $$$($$($nesting, 'Onigmo'), 'Regexp').$new(regexpstring)];
@@ -32035,7 +32061,7 @@ Opal.modules["interscript"] = function(Opal) {
   }
   var self = Opal.top, $nesting = [], nil = Opal.nil, $$$ = Opal.const_get_qualified, $$ = Opal.const_get_relative, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass, $hash2 = Opal.hash2, $truthy = Opal.truthy, $send = Opal.send;
 
-  Opal.add_stubs(['$==', '$require', '$extend', '$has_key?', '$for', '$[]=', '$-', '$[]', '$dup', '$chain', '$>', '$length', '$transliterate', '$shift', '$character_separator', '$word_separator', '$title_case', '$downcase', '$characters_hash', '$dictionary_hash', '$dictionary_trie', '$external_processing', '$<', '$size', '$to_s', '$+', '$partial_word?', '$word?', '$sub_replace', '$clone', '$new', '$each', '$rules', '$mkregexp', '$gsub', '$match', '$first', '$offset', '$!', '$up_case_around?', '$upcase', '$is_a?', '$add_separator', '$postrules', '$to_proc', '$sub', '$!=', '$unicode_normalize', '$private', '$positive?', '$!~', '$>=', '$strip', '$empty?']);
+  Opal.add_stubs(['$==', '$require', '$extend', '$has_key?', '$for', '$[]=', '$-', '$[]', '$dup', '$chain', '$>', '$length', '$transliterate', '$shift', '$character_separator', '$word_separator', '$title_case', '$downcase', '$characters_hash', '$dictionary_hash', '$dictionary_trie', '$external_processing', '$<', '$size', '$to_s', '$+', '$partial_word?', '$word?', '$sub_replace', '$clone', '$new', '$each', '$rules', '$mkregexp', '$gsub', '$match', '$first', '$offset', '$!', '$up_case_around?', '$upcase', '$is_a?', '$add_separator', '$postrules', '$to_proc', '$!=', '$unicode_normalize', '$private', '$positive?', '$!~', '$>=', '$strip', '$empty?']);
   
   if ($$($nesting, 'RUBY_ENGINE')['$==']("opal")) {
     self.$require("interscript/opal/maps")
@@ -32193,7 +32219,7 @@ Opal.modules["interscript"] = function(Opal) {
         };
         re = self.$mkregexp("^(.)");
         if ($truthy(title_case)) {
-          output = $send(output, 'sub', [re], "upcase".$to_proc())};
+          output = $send(output, 'gsub', [re], "upcase".$to_proc())};
         if ($truthy(word_separator['$!='](""))) {
           
           re = self.$mkregexp("" + (word_separator) + (separator));

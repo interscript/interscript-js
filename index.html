@@ -51,17 +51,14 @@
       };
 
       const system_code = sel.options[sel.selectedIndex].text;
-      var httpRequest = new XMLHttpRequest();
-      httpRequest.onreadystatechange = function() {
-        if (httpRequest.readyState === XMLHttpRequest.DONE) {
-          Opal.Interscript.$load_map_json(system_code, httpRequest.responseText);
-          var result = Opal.Interscript.$transliterate(system_code, input.value);
-          output.value = result;
-          alert('Successfully done!');
-        }
-      };
-      httpRequest.open('GET', "maps/"+system_code+".json", true);
-      httpRequest.send();
+      Opal.Interscript.$on_load_maps({maps: system_code}).then(function() {
+        var result = Opal.Interscript.$transliterate(system_code, input.value);
+        output.value = result;
+        alert('Successfully done!');
+      }).catch(function(error) {
+        console.log(error);
+        alert("Couldn't load a map due to: "+error);
+      });
     }
   </script>
 </html>

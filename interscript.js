@@ -32119,14 +32119,14 @@ Opal.modules["interscript/opal"] = function(Opal) {
           if (opts['$[]']("loader")['$!='](nil)) {
             return opts['$[]']("loader")(opts['$[]']("path")+map+'.json').then(opts['$[]']("processor"));
           }
+          else if (typeof window !== "undefined") {
+            return ajax_loader(map);
+          }
           else if (typeof global !== "undefined") {
             return node_loader(map);
           }
           else if (!is_local && typeof fetch === "function") {
             return fetch_loader(map);
-          }
-          else if (typeof window !== "undefined") {
-            return ajax_loader(map);
           }
           else {
             self.$raise($$($nesting, 'StandardError'), "We couldn't find a good way to load a map")

@@ -1428,7 +1428,7 @@
   Opal.breaker = new Error('unexpected break (old)');
   Opal.returner = new Error('unexpected return');
   TypeError.$$super = Error;
-  var stubs = '$new#$===#$respond_to?#$raise#$type_error#$coerce_to#$nil?#$<=>#$coerce_to!#$[]#$upcase#$module_eval#$to_proc#$<#$>#$attr_reader#$attr_writer#$const_name!#$=~#$inject#$split#$const_get#$!~#$start_with?#$bind#$call#$append_features#$included#$name#$cover?#$size#$merge#$compile#$proc#$any?#$to_s#$include?#$copy_class_variables#$copy_constants#$require#$class_eval#$initialize_copy#$allocate#$inspect#$object_id#$coerce_to?#$<<#$copy_instance_variables#$copy_singleton_methods#$initialize_clone#$define_method#$singleton_class#$initialize_dup#$for#$empty?#$pop#$extend_object#$extended#$to_int#$Integer#$enum_for#$result#$print#$format#$puts#$each#$<=#$length#$exception#$is_a?#$rand#$respond_to_missing?#$try_convert!#$join#$new_seed#$srand#$sym#$arg#$open#$include#$clone#$+#$Rational#$escape#$options#$to_str#$match#$begin#$to_a#$force_encoding#$ljust#$ceil#$/#$rjust#$floor#$each_char#$chomp#$to_i#$encoding#$match?#$captures#$succ#$public_send#$destructure#$enumerator_size#$yield#$flatten#$map#$warn#$*#$try_convert#$-#$push#$[]=#$first#$reverse#$sort#$compare#$dup#$sort!#$map!#$key?#$values#$zip#$instance_of?#$Float#$coerce#$div#$-@#$to_f#$denominator#$to_r#$%#$Complex#$zero?#$numerator#$abs#$round#$truncate#$replace#$to_ary#$hash#$bsearch_index#$dig#$end#$exclude_end?#$max#$min#$>=#$**#$sort_by#$times#$last#$upto#$reject#$pristine#$merge!#$fetch#$compare_by_identity#$lambda?#$arity#$default#$default_proc#$default_proc=#$default=#$bridge#$__coerced__#$nan?#$infinite?#$gcd#$lcm#$frexp#$ldexp#$rationalize#$loop#$each_with_index#$bsearch#$source_location#$const_set#$sub#$default_external#$attr_accessor#$register#$bytes#$each_byte#$bytesize#$find#$getbyte#$module_function#$checked#$float!#$gamma#$integer!#$real?#$cos#$sin#$real#$imag#$conj#$abs2#$quo#$polar#$exp#$log#$divmod#$hypot#$atan2#$finite?#$positive?#$reduce#$with_precision#$send#$convert#$strftime#$year#$month#$day#$wday#$utc?#$mon#$yday#$hour#$sec#$zone#$cweek_cyear#$isdst#$unshift#$define_struct_attribute#$alias_method#$members#$keys#$to_sym#$each_pair#$each_with_object#$write#$String#$concat#$getc#$write_proc=#$extend#$to_path#$basename#$rindex#$gsub#$end_with?#$__register_clock__#$now#$reseed#$seed#$encode#$chr#$state#$const_defined?#$generator=#$native?#$to_n#$Native#$_Array#$instance_method#$slice#$_initialize#$tap#$exports#$Array#$name_for#$loaded#$load_from_buffer#$all?#$libs#$reset#$reset_readers#$reset_serializers#$private#$providers#$contains?#$file_format#$clear#$configured_providers#$configured_default#$extname#$slice!#$provider_instances#$letter#$terminal?#$children_tree#$root?#$compressible?#$compress_child_and_merge#$compress_children_and_copy#$compress#$first_child#$new_compressed_node#$parent#$compress_children#$terminal!#$each_value#$parent=#$add#$root#$char_symbols#$compressed?#$compress_root#$root=#$compressor#$partial_word?#$chars#$word?#$scan#$children#$match_prefix#$as_word#$class_name#$attributes#$letter_inspect#$terminal_inspect#$children_inspect#$terminal#$foreach#$chomp!#$read#$load#$serializer#$dump#$safe_load#$terminal=#$partial_word_chars?#$word_chars?#$closest_node#$children_match_prefix#$delete#$protected#$missing#$add_to_children_tree#$new_node#$shift#$root_builder#$resolve#$readers#$each_word#$serializers#$properties#$create_id#$json_create#$create_id=#$parse#$generate#$from_object#$to_json#$responds_to?#$to_io#$load_and_serialize_system_mappings#$depth#$load_system_mappings#$serialize_system_mappings#$system_code#$root_path#$load_opal_mappings#$load_file#$system_path#$include_inherited_mappings#$build_hashes#$build_trie#$rules#$postrules#$characters#$dictionary#$compact!#$to_h#$create#$dictionary_trie#$b#$pack#$packformat#$unpack#$signed#$value#$address#$from_string#$alignment#$pointer#$read_string#$find_type#$typedef#$has_key?#$get_bytes#$get_string#$put_bytes#$get#$put#$buffer#$from_native_mem#$from_native#$to_native_mem#$to_native#$count#$memory#$library#$context#$malloc#$type#$address=#$realloc#$free#$by_ptr#$set#$offset#$type=#$struct#$kind_of?#$attach_function#$define_singleton_method#$contexts#$decode64#$ffi_lib#$layout#$ptr#$grow#$evaluate#$js_matches#$pattern#$default_compile_info#$cached#$options=#$|#$onig_new_deluxe#$js_exec#$onig_region_new#$onig_search#$onig_region_free#$onig_free#$ffi_evaluate#$matches#$ffi_region#$resize#$write_string#$match_before_onigmo#$match_before_onigmo?#$gsub_before_onigmo#$map_resolve#$map_loaded?#$load_map_json#$uniq#$load_maps#$chain#$transliterate#$character_separator#$word_separator#$title_case#$downcase#$characters_hash#$dictionary_hash#$external_processing#$sub_replace#$mkregexp#$up_case_around?#$add_separator#$unicode_normalize#$aliases#$map_exist?#$strip#$wait_for#$on_load'.split('#'), stubs_obj = { };
+  var stubs = '$new#$===#$respond_to?#$raise#$type_error#$coerce_to#$nil?#$<=>#$coerce_to!#$[]#$upcase#$module_eval#$to_proc#$<#$>#$attr_reader#$attr_writer#$const_name!#$=~#$inject#$split#$const_get#$!~#$start_with?#$bind#$call#$append_features#$included#$name#$cover?#$size#$merge#$compile#$proc#$any?#$to_s#$include?#$copy_class_variables#$copy_constants#$require#$class_eval#$initialize_copy#$allocate#$inspect#$object_id#$coerce_to?#$<<#$copy_instance_variables#$copy_singleton_methods#$initialize_clone#$define_method#$singleton_class#$initialize_dup#$for#$empty?#$pop#$extend_object#$extended#$to_int#$Integer#$enum_for#$result#$print#$format#$puts#$each#$<=#$length#$exception#$is_a?#$rand#$respond_to_missing?#$try_convert!#$join#$new_seed#$srand#$sym#$arg#$open#$include#$clone#$+#$Rational#$escape#$options#$to_str#$match#$begin#$to_a#$force_encoding#$ljust#$ceil#$/#$rjust#$floor#$each_char#$chomp#$to_i#$encoding#$match?#$captures#$succ#$public_send#$destructure#$enumerator_size#$yield#$flatten#$map#$warn#$*#$try_convert#$-#$push#$[]=#$first#$reverse#$sort#$compare#$dup#$sort!#$map!#$key?#$values#$zip#$instance_of?#$Float#$coerce#$div#$-@#$to_f#$denominator#$to_r#$%#$Complex#$zero?#$numerator#$abs#$round#$truncate#$replace#$to_ary#$hash#$bsearch_index#$dig#$end#$exclude_end?#$max#$min#$>=#$**#$sort_by#$times#$last#$upto#$reject#$pristine#$merge!#$fetch#$compare_by_identity#$lambda?#$arity#$default#$default_proc#$default_proc=#$default=#$bridge#$__coerced__#$nan?#$infinite?#$gcd#$lcm#$frexp#$ldexp#$rationalize#$loop#$each_with_index#$bsearch#$source_location#$const_set#$sub#$default_external#$attr_accessor#$register#$bytes#$each_byte#$bytesize#$find#$getbyte#$module_function#$checked#$float!#$gamma#$integer!#$real?#$cos#$sin#$real#$imag#$conj#$abs2#$quo#$polar#$exp#$log#$divmod#$hypot#$atan2#$finite?#$positive?#$reduce#$with_precision#$send#$convert#$strftime#$year#$month#$day#$wday#$utc?#$mon#$yday#$hour#$sec#$zone#$cweek_cyear#$isdst#$unshift#$define_struct_attribute#$alias_method#$members#$keys#$to_sym#$each_pair#$each_with_object#$write#$String#$concat#$getc#$write_proc=#$extend#$to_path#$basename#$rindex#$gsub#$end_with?#$__register_clock__#$now#$reseed#$seed#$encode#$chr#$state#$const_defined?#$generator=#$native?#$to_n#$Native#$_Array#$instance_method#$slice#$_initialize#$tap#$exports#$Array#$name_for#$loaded#$load_from_buffer#$all?#$libs#$reset#$reset_readers#$reset_serializers#$private#$providers#$contains?#$file_format#$clear#$configured_providers#$configured_default#$extname#$slice!#$provider_instances#$letter#$terminal?#$children_tree#$root?#$compressible?#$compress_child_and_merge#$compress_children_and_copy#$compress#$first_child#$new_compressed_node#$parent#$compress_children#$terminal!#$each_value#$parent=#$add#$root#$char_symbols#$compressed?#$compress_root#$root=#$compressor#$partial_word?#$chars#$word?#$scan#$children#$match_prefix#$as_word#$class_name#$attributes#$letter_inspect#$terminal_inspect#$children_inspect#$terminal#$foreach#$chomp!#$read#$load#$serializer#$dump#$safe_load#$terminal=#$partial_word_chars?#$word_chars?#$closest_node#$children_match_prefix#$delete#$protected#$missing#$add_to_children_tree#$new_node#$shift#$root_builder#$resolve#$readers#$each_word#$serializers#$properties#$create_id#$json_create#$create_id=#$parse#$generate#$from_object#$to_json#$responds_to?#$to_io#$load_and_serialize_system_mappings#$depth#$load_system_mappings#$serialize_system_mappings#$system_code#$root_path#$load_opal_mappings#$load_file#$system_path#$include_inherited_mappings#$build_hashes#$build_trie#$rules#$postrules#$characters#$dictionary#$compact!#$to_h#$create#$dictionary_trie#$b#$pack#$packformat#$unpack#$signed#$value#$address#$from_string#$alignment#$pointer#$read_string#$find_type#$typedef#$has_key?#$get_bytes#$get_string#$put_bytes#$get#$put#$buffer#$from_native_mem#$from_native#$to_native_mem#$to_native#$count#$memory#$library#$context#$malloc#$type#$address=#$realloc#$free#$by_ptr#$set#$offset#$type=#$struct#$kind_of?#$attach_function#$define_singleton_method#$contexts#$decode64#$ffi_lib#$layout#$ptr#$grow#$evaluate#$js_matches#$pattern#$default_compile_info#$cached#$options=#$|#$onig_new_deluxe#$js_exec#$onig_region_new#$onig_search#$onig_region_free#$onig_free#$ffi_evaluate#$matches#$ffi_region#$resize#$write_string#$match_before_onigmo#$match_before_onigmo?#$gsub_before_onigmo#$sub_before_onigmo#$map_resolve#$map_loaded?#$load_map_json#$uniq#$load_maps#$chain#$transliterate#$character_separator#$word_separator#$title_case#$downcase#$characters_hash#$dictionary_hash#$external_processing#$sub_replace#$mkregexp#$up_case_around?#$add_separator#$unicode_normalize#$aliases#$map_exist?#$strip#$wait_for#$on_load'.split('#'), stubs_obj = { };
   for(var i = 0; i < stubs.length; i++) stubs_obj[stubs[i]] = {
     value: Opal.stub_for(stubs[i]),
     enumerable: false,
@@ -13294,20 +13294,22 @@ Opal.modules["interscript/opal/maps"] = function() {
     "var-mar-Deva-Latn-hunterian-1872": null,
     "bgnpcgn-prs-Arab-Latn-2007": null,
     "odni-aze-Cyrl-Latn-2015": null,
-    "mns-mon-Cyrl-Latn-5217-2012": null,
     "alalc-mar-Deva-Latn-1997": null,
     "bgnpcgn-ell-Grek-Latn-1996": null,
     "alalc-tam-Taml-Latn-2011": null,
     "dos-nep-Deva-Latn-1997": null,
     "royin-tha-Thai-Latn-1939-generic": null,
     "bgnpcgn-bel-Cyrl-Latn-1979": null,
+    "alalc-ori-Orya-Latn-2011": null,
     "din-hin-Deva-Latn-33904-2018": null,
     "iso-pan-Guru-Latn-15919-2001": null,
     "alalc-ukr-Cyrl-Latn-2011": null,
     "iso-mal-Mlym-Latn-15919-2001": null,
+    "alalc-kan-Kana-Latn-1997": null,
     "odni-fas-Arab-Latn-2015": null,
     "iso-jpn-Hrkt-Latn-3602-1989": null,
     "din-mar-Deva-Latn-33904-2018": null,
+    "bgnpcgn-urd-Arab-Latn-2007": null,
     "bgnpcgn-che-Cyrl-Latn-2008": null,
     "kp-kor-Hang-Latn-2002": null,
     "un-ukr-Cyrl-Latn-2012": null,
@@ -13321,9 +13323,7 @@ Opal.modules["interscript/opal/maps"] = function() {
     "elot-ell-Grek-Latn-743-1982-tl": null,
     "iso-tel-Telu-Latn-15919-2001": null,
     "bgnpcgn-kat-Geor-Latn-1981": null,
-    "odni-per-Arab-Latn-2015": null,
     "un-mar-Deva-Latn-2016": null,
-    "bis-knd-Knda-Latn-13194-1991": null,
     "bgn-kor-Kore-Latn-1943": null,
     "var-kor-Kore-Latn-mr-1939": null,
     "alalc-ukr-Cyrl-Latn-1997": null,
@@ -13355,10 +13355,13 @@ Opal.modules["interscript/opal/maps"] = function() {
     "alalc-tam-Taml-Latn-1997": null,
     "bgnpcgn-bul-Cyrl-Latn-2013": null,
     "iso-ell-Grek-Latn-843-1997-t2": null,
+    "bgnpcgn-kur-Arab-Latn-2007": null,
+    "odni-mkd-Cyrl-Latn-2005": null,
     "bgnpcgn-ell-Grek-Latn-1962": null,
     "iso-guj-Gujr-Latn-15919-2001": null,
     "mvd-bel-Cyrl-Latn-2008": null,
     "un-hin-Deva-Latn-2016": null,
+    "bgnpcgn-far-Latn-Latn-1964": null,
     "bgnpcgn-per-Arab-Latn-1958": null,
     "din-grc-Grek-Latn-31634-2011-t1": null,
     "bis-pnj-Guru-Latn-13194-1991": null,
@@ -13370,14 +13373,18 @@ Opal.modules["interscript/opal/maps"] = function() {
     "icao-srp-Cyrl-Latn-9303": null,
     "bis-dev-Deva-Latn-13194-1991": null,
     "odni-ara-Arab-Latn-2015": null,
+    "bgnpcgn-kaz-Cyrl-Latn-1979": null,
     "alalc-srp-Cyrl-Latn-2013": null,
+    "alalc-ori-Orya-Latn-1997": null,
     "alalc-amh-Ethi-Latn-1997": null,
     "icao-fas-Arab-Latn-9303": null,
     "iso-asm-Beng-Latn-15919-2001": null,
+    "var-gez-Ethi-Latn-eae-2003": null,
     "bgn-kor-Hang-Latn-1943": null,
     "alalc-bul-Cyrl-Latn-1997": null,
     "iso-kat-Geor-Latn-9984-1996": null,
     "bgnpcgn-fas-Arab-Latn-1956": null,
+    "masm-mon-Cyrl-Latn-5217-2012": null,
     "un-ell-Grek-Latn-1987-phonetic": null,
     "alalc-hin-Deva-Latn-2011": null,
     "un-mon-Mong-Latn-general-2013": null,
@@ -13397,9 +13404,10 @@ Opal.modules["interscript/opal/maps"] = function() {
     "alalc-mar-Deva-Latn-2011": null,
     "un-amh-Ethi-Latn-2016": null,
     "bgnpcgn-amh-Ethi-Latn-1967": null,
+    "odni-fas-Arab-Latn-2004": null,
     "odni-urd-Arab-Latn-2015": null,
-    "iso-kan-Knda-Latn-15919-2001": null,
     "alalc-kat-Geok-Latn-1997": null,
+    "bgnpcgn-bal-Arab-Latn-2008": null,
     "royin-tha-Thai-Latn-1999": null,
     "odni-uig-Cyrl-Latn-2015": null,
     "odni-uzb-Cyrl-Latn-2015": null,
@@ -13420,7 +13428,9 @@ Opal.modules["interscript/opal/maps"] = function() {
     "bgnpcgn-bak-Cyrl-Latn-2007": null,
     "var-jpn-Hrkt-Latn-hepburn-1954": null,
     "din-kat-Geor-Latn-32707-2010": null,
+    "alalc-ben-Beng-Latn-1997": null,
     "alalc-sin-Sinh-Latn-2011": null,
+    "alalc-kan-Kana-Latn-2011": null,
     "bgnpcgn-aze-Cyrl-Latn-1993": null,
     "alalc-mal-Mlym-Latn-1997": null,
     "var-mon-Mong-Latn-1930": null,
@@ -13430,6 +13440,7 @@ Opal.modules["interscript/opal/maps"] = function() {
     "by-bel-Cyrl-Latn-1998": null,
     "alalc-kat-Geor-Latn-1997": null,
     "iso-tha-Thai-Latn-11940-1998": null,
+    "alalc-tel-Telu-Latn-1997": null,
     "apcbg-bul-Cyrl-Latn-1995": null,
     "ggg-kat-Geor-Latn-2002": null,
     "bgnpcgn-pus-Arab-Latn-1968": null,
@@ -13446,7 +13457,7 @@ Opal.modules["interscript/opal/maps"] = function() {
     "gost-rus-Cyrl-Latn-16876-71-1983": null,
     "bgnpcgn-mkd-Cyrl-Latn-1981": null,
     "alalc-ell-Grek-Latn-2010": null,
-    "mns-mon-Latn-Cyrl-5217-2012": null,
+    "alalc-tel-Telu-Latn-2011": null,
     "bgnpcgn-zho-Hans-Latn-1979": null,
     "bgnpcgn-kor-Kore-Latn-rok-2011": null,
     "alalc-mkd-Cyrl-Latn-1997": null,
@@ -13454,6 +13465,7 @@ Opal.modules["interscript/opal/maps"] = function() {
     "iso-ben-Beng-Latn-15919-2001": null,
     "var-tha-Thai-Zsym-ipa": null,
     "alalc-srp-Cyrl-Latn-1997": null,
+    "bgnpcgn-isl-Latn-Latn-1964": null,
     "bas-rus-Cyrl-Latn-2017-bss": null,
     "iso-san-Deva-Latn-15919-2001": null,
     "bgnpcgn-kor-Hang-Latn-kn-1945": null,
@@ -13462,13 +13474,16 @@ Opal.modules["interscript/opal/maps"] = function() {
     "ua-ukr-Cyrl-Latn-2010": null,
     "alalc-pan-Guru-Latn-1997": null,
     "gki-bel-Cyrl-Latn-2000": null,
+    "bgnpcgn-srp-Cyrl-Latn-1962": null,
     "var-kor-Kore-Hang-2013": null,
     "odni-tat-Cyrl-Latn-2015": null,
     "un-nep-Deva-Latn-1972": null,
+    "alalc-aze-Arab-Latn-1997": null,
     "iso-hin-Deva-Latn-15919-2001": null,
     "un-ara-Arab-Latn-1971": null,
     "bgnpcgn-prs-Arab-Latn-yaghoubi": null,
     "un-mon-Mong-Latn-phonetic-2013": null,
+    "odni-prs-Arab-Latn-2004": null,
     "bis-guj-Gujr-Latn-13194-1991": null,
     "bgnpcgn-arm-Armn-Latn-1981": null,
     "odni-tgk-Cyrl-Latn-2015": null,
@@ -13478,6 +13493,8 @@ Opal.modules["interscript/opal/maps"] = function() {
     "odni-ukr-Cyrl-Latn-2015": null,
     "alalc-guj-Gujr-Latn-2011": null,
     "az-aze-Cyrl-Latn-1939": null,
+    "odni-srp-Cyrl-Latn-2005": null,
+    "bgnpcgn-kir-Cyrl-Latn-1979": null,
     "mvd-bel-Cyrl-Latn-2010": null,
     "icao-rus-Cyrl-Latn-9303": null,
     "bgnpcgn-kat-Geor-Latn-2009": null,
@@ -13485,14 +13502,18 @@ Opal.modules["interscript/opal/maps"] = function() {
     "alalc-guj-Gujr-Latn-1997": null,
     "alalc-ben-Beng-Latn-2017": null,
     "iso-kor-Hang-Latn-1996-method2": null,
+    "un-ori-Orya-Latn-1972": null,
     "iso-inc-Deva-Latn-15919-2001": null,
     "lshk-yue-Hani-Latn-jyutping-1993": null,
     "odni-bul-Cyrl-Latn-2015": null,
+    "odni-hin-Deva-Latn-2004": null,
     "sac-zho-Hans-Latn-1979": null,
+    "masm-mon-Latn-Cyrl-5217-2012": null,
     "ua-ukr-Cyrl-Latn-1996": null,
     "hk-yue-Hani-Latn-1888": null,
     "az-aze-Cyrl-Latn-1958": null,
     "un-nep-Deva-Latn-2013": null,
+    "un-urd-Arab-Latn-1972": null,
     "alalc-mon-Cyrl-Latn-1997": null,
     "odni-srp-Cyrl-Latn-2015": null,
     "odni-mkd-Cyrl-Latn-2015": null,
@@ -13506,10 +13527,15 @@ Opal.modules["interscript/opal/maps"] = function() {
     "bgnpcgn-uzb-Cyrl-Latn-1979": null,
     "un-ara-Arab-Latn-1972": null,
     "bgnpcgn-nep-Deva-Latn-2011": null,
+    "un-kan-Kana-Latn-2016": null,
     "bgnpcgn-bul-Cyrl-Latn-1952": null,
+    "iso-kan-Kana-Latn-15919-2001": null,
+    "bis-kan-Kana-Latn-13194-1991": null,
+    "var-amh-Ethi-Latn-eae-2003": null,
     "var-jpn-Hrkt-Latn-hepburn-1886": null,
     "icao-bel-Cyrl-Latn-9303": null,
     "bgna-bul-Cyrl-Latn-2006": null,
+    "odni-prs-Arab-Latn-2015": null,
     "stategeocadastre-ukr-Cyrl-Latn-1993": null,
     "odni-kat-Geor-Latn-2015": null,
     "var-mon-Mong-Latn-lessing": null,
@@ -13524,11 +13550,12 @@ Opal.modules["interscript/opal/maps"] = function() {
   Opal.global.InterscriptMapAliases = {
     "zho_Hani2Latn_AcadSin_2002": "acadsin-zho-Hani-Latn-2002",
     "ara_Arab2Latn_ALA_1997": "alalc-ara-Arab-Latn-1997",
-    "uas_Arab2Latn_BGN_2007": "bgnpcgn-prs-Arab-Latn-2007",
+    "uas_Arab2Latn_BGN_2007": "bgnpcgn-urd-Arab-Latn-2007",
     "mar_Deva2Latn_ALA_1997": "alalc-mar-Deva-Latn-1997",
     "ell_Grek2Latn_ELOT743_1996": "bgnpcgn-ell-Grek-Latn-1996",
     "tam_Taml2Latn_ALA_2011": "alalc-tam-Taml-Latn-2011",
     "bel_Cyrl2Latn_BGN_1979": "bgnpcgn-bel-Cyrl-Latn-1979",
+    "ori_Orya2Latn_ALA_2011": "alalc-ori-Orya-Latn-2011",
     "kor_Hang2Latn_GKN_2002": "kp-kor-Hang-Latn-2002",
     "zho_Hani2Latn_WDG_1979": "var-zho-Hani-Latn-wd-1979",
     "kat_Geor2Latn_BGN_1981": "bgnpcgn-kat-Geor-Latn-1981",
@@ -13543,6 +13570,7 @@ Opal.modules["interscript/opal/maps"] = function() {
     "bul_Cyrl2Latn_BGN_2013": "bgnpcgn-bul-Cyrl-Latn-2013",
     "ell_Grek2Latn_BGN_1962": "bgnpcgn-ell-Grek-Latn-1962",
     "asm_Deva2Latn_ALA_1997": "alalc-asm-Deva-Latn-1997",
+    "ori_Orya2Latn_ALA_1997": "alalc-ori-Orya-Latn-1997",
     "amh_Ethi2Latn_ALA_1997": "alalc-amh-Ethi-Latn-1997",
     "kor_Hang2Latn_MR_1939": "bgn-kor-Hang-Latn-1943",
     "bul_Cyrl2Latn_ALA_1997": "alalc-bul-Cyrl-Latn-1997",
@@ -13556,11 +13584,13 @@ Opal.modules["interscript/opal/maps"] = function() {
     "mon_Cyrl2Latn_BGN_1964": "bgnpcgn-mon-Cyrl-Latn-1964",
     "tat_Cyrl2Latn_BGN_2005": "bgnpcgn-tat-Cyrl-Latn-2007",
     "bak_Cyrl2Latn_BGN_2007": "bgnpcgn-bak-Cyrl-Latn-2007",
+    "ben_Beng2Latn_ALA_1997": "alalc-ben-Beng-Latn-1997",
     "sin_Sinh2Latn_ALA_2011": "alalc-sin-Sinh-Latn-2011",
     "mal_Mlym2Latn_ALA_1997": "alalc-mal-Mlym-Latn-1997",
     "sin_Sinh2Latn_ALA_1997": "alalc-sin-Sinh-Latn-1997",
     "bel_Cyrl2Latn_GBO_1998": "by-bel-Cyrl-Latn-1998",
     "kat_Geor2Latn_ALA_1997": "alalc-kat-Geor-Latn-1997",
+    "tel_Telu2Latn_ALA_1997": "alalc-tel-Telu-Latn-1997",
     "kat_Geor2Latn_GGG_2002": "ggg-kat-Geor-Latn-2002",
     "bel_Cyrl2Latn_ALA_1997": "alalc-bel-Cyrl-Latn-1997",
     "ukr_Cyrl2Latn_BGN_1965": "bgnpcgn-ukr-Cyrl-Latn-1965",
@@ -13569,6 +13599,7 @@ Opal.modules["interscript/opal/maps"] = function() {
     "rus_Cyrl2Latn_BGN_1947": "bgnpcgn-rus-Cyrl-Latn-1947",
     "srp_Cyrl2Latn_ALA_1997": "alalc-srp-Cyrl-Latn-1997",
     "pan_Deva2Latn_ALA_1997": "alalc-pan-Guru-Latn-1997",
+    "aze_Arab2Latn_ALA_1997": "alalc-aze-Arab-Latn-1997",
     "guj_Gujr2Latn_ALA_2011": "alalc-guj-Gujr-Latn-2011",
     "guj_Gujr2Latn_ALA_1997": "alalc-guj-Gujr-Latn-1997",
     "zho_Hani2Latn_GCH_1979": "sac-zho-Hans-Latn-1979",
@@ -19242,7 +19273,12 @@ Opal.modules["onigmo/ffi"] = function(Opal) {
           var $a, $$3, self = this;
           if(self["default"] == null) self["default"] = nil;
           return (self["default"] = ($truthy($a = self["default"]) ? $a : $send($$$($$($nesting, 'Onigmo'), 'FFI'), 'context', [], ($$3 = function() {
-            var self = $$3.$$s || this, $$4;
+            var self = $$3.$$s || this, $$4, casefold = nil;
+            casefold = $$$($$($nesting, 'Onigmo'), 'FFI').$library().$exports()['$[]']("OnigDefaultCaseFoldFlag");
+            if($truthy(casefold['$respond_to?']("value"))) {
+              casefold = casefold.$value();
+            }
+            ;
             return $send(self.$new(), 'tap', [], ($$4 = function(ci) {
               var self = $$4.$$s || this, $writer = nil;
               if(ci == null) {
@@ -19269,7 +19305,7 @@ Opal.modules["onigmo/ffi"] = function(Opal) {
               $send(ci, '[]=', Opal.to_a($writer));
               $writer[$rb_minus($writer["length"], 1)];
               ;
-              $writer = ["case_fold_flag", $$$($$($nesting, 'Onigmo'), 'FFI').$library().$exports()['$[]']("OnigDefaultCaseFoldFlag").$value()];
+              $writer = ["case_fold_flag", casefold];
               $send(ci, '[]=', Opal.to_a($writer));
               return $writer[$rb_minus($writer["length"], 1)];
               ;
@@ -19344,6 +19380,7 @@ Opal.modules["onigmo/regexp"] = function(Opal) {
           offset = nil;
         }
         ;
+        self.$reset();
         block = ($truthy($a = block) ? $a : $send(self, 'proc', [], ($$2 = function(i) {
           var self = $$2.$$s || this;
           if(i == null) {
@@ -19360,6 +19397,7 @@ Opal.modules["onigmo/regexp"] = function(Opal) {
           offset = nil;
         }
         ;
+        self.$reset();
         return self.$evaluate(str, offset)['$!']()['$!']();
       }, $Regexp_match$ques$3.$$arity = -2);
       Opal.def(self, '$=~', $Regexp_$eq_tilde$4 = function(str) {
@@ -19601,7 +19639,7 @@ Opal.modules["onigmo/core_ext"] = function(Opal) {
   self.$require("onigmo");
   return (function($base, $super, $parent_nesting) {
     var self = $klass($base, $super, 'String');
-    var $nesting = [self].concat($parent_nesting), $String_match$1, $String_match$ques$2, $String_gsub$3;
+    var $nesting = [self].concat($parent_nesting), $String_match$1, $String_match$ques$2, $String_gsub$3, $String_sub$7;
     Opal.alias(self, "match_before_onigmo", "match");
     Opal.def(self, '$match', $String_match$1 = function $$match(re, pos) {
       var $iter = $String_match$1.$$p, block = $iter || nil, self = this;
@@ -19631,13 +19669,14 @@ Opal.modules["onigmo/core_ext"] = function(Opal) {
       ;
     }, $String_match$ques$2.$$arity = -2);
     Opal.alias(self, "gsub_before_onigmo", "gsub");
-    return (Opal.def(self, '$gsub', $String_gsub$3 = function $$gsub(from, to) {
+    Opal.def(self, '$gsub', $String_gsub$3 = function $$gsub(from, to) {
       var $iter = $String_gsub$3.$$p, block = $iter || nil, $$4, self = this, out = nil, index = nil;
       if($iter) $String_gsub$3.$$p = null;
       if($iter) $String_gsub$3.$$p = null;
       ;
       ;
       if($truthy($$$($$($nesting, 'Onigmo'), 'Regexp')['$==='](from))) {
+        from.$reset();
         out = [];
         index = 0;
         (function() {
@@ -19719,7 +19758,20 @@ Opal.modules["onigmo/core_ext"] = function(Opal) {
         return $send(self, 'gsub_before_onigmo', [from, to], block.$to_proc());
       }
       ;
-    }, $String_gsub$3.$$arity = -2), nil) && 'gsub';
+    }, $String_gsub$3.$$arity = -2);
+    Opal.alias(self, "sub_before_onigmo", "sub");
+    return (Opal.def(self, '$sub', $String_sub$7 = function $$sub(from, to) {
+      var $iter = $String_sub$7.$$p, block = $iter || nil, self = this;
+      if($iter) $String_sub$7.$$p = null;
+      if($iter) $String_sub$7.$$p = null;
+      ;
+      ;
+      if($truthy($$$($$($nesting, 'Onigmo'), 'Regexp')['$==='](from))) {
+        from.$reset();
+      }
+      ;
+      return $send(self, 'sub_before_onigmo', [from, to], block.$to_proc());
+    }, $String_sub$7.$$arity = -2), nil) && 'sub';
   })($nesting[0], null, $nesting);
 };
 Opal.modules["interscript/opal"] = function(Opal) {

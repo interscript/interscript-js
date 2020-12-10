@@ -23514,6 +23514,8 @@ Opal.global.InterscriptMaps = {
   
     "alalc-srp-Cyrl-Latn-2013": null,
   
+    "un-pan-Guru-Latn-1972": null,
+  
     "alalc-ori-Orya-Latn-1997": null,
   
     "alalc-amh-Ethi-Latn-1997": null,
@@ -23531,6 +23533,8 @@ Opal.global.InterscriptMaps = {
     "iso-kat-Geor-Latn-9984-1996": null,
   
     "bgnpcgn-fas-Arab-Latn-1956": null,
+  
+    "odni-ara-Arab-Latn-2004": null,
   
     "masm-mon-Cyrl-Latn-5217-2012": null,
   
@@ -23652,6 +23656,8 @@ Opal.global.InterscriptMaps = {
   
     "bgnpcgn-pus-Arab-Latn-1968": null,
   
+    "alalc-div-Thaa-Latn-1997": null,
+  
     "sasm-mon-Mong-Latn-general-1978": null,
   
     "alalc-bel-Cyrl-Latn-1997": null,
@@ -23667,6 +23673,8 @@ Opal.global.InterscriptMaps = {
     "un-ell-Grek-Latn-1987-ts": null,
   
     "iso-ori-Orya-Latn-15919-2001": null,
+  
+    "odni-bul-Cyrl-Latn-2005": null,
   
     "iso-pra-Deva-Latn-15919-2001": null,
   
@@ -23697,6 +23705,8 @@ Opal.global.InterscriptMaps = {
     "bgnpcgn-isl-Latn-Latn-1964": null,
   
     "bas-rus-Cyrl-Latn-2017-bss": null,
+  
+    "mv-div-Thaa-Latn-1987": null,
   
     "iso-san-Deva-Latn-15919-2001": null,
   
@@ -23735,6 +23745,8 @@ Opal.global.InterscriptMaps = {
     "bis-guj-Gujr-Latn-13194-1991": null,
   
     "bgnpcgn-arm-Armn-Latn-1981": null,
+  
+    "odni-tuk-Cyrl-Latn-2015": null,
   
     "odni-tgk-Cyrl-Latn-2015": null,
   
@@ -23776,6 +23788,8 @@ Opal.global.InterscriptMaps = {
   
     "odni-bul-Cyrl-Latn-2015": null,
   
+    "bgnpcgn-div-Thaa-Latn-1988": null,
+  
     "odni-hin-Deva-Latn-2004": null,
   
     "sac-zho-Hans-Latn-1979": null,
@@ -23804,9 +23818,13 @@ Opal.global.InterscriptMaps = {
   
     "odni-bel-Cyrl-Latn-2015": null,
   
+    "un-tel-Telu-Latn-1972": null,
+  
     "iso-pli-Thai-Latn-15919-2001": null,
   
     "bis-mlm-Mlym-Latn-13194-1991": null,
+  
+    "un-asm-Beng-Latn-1972": null,
   
     "ses-ara-Arab-Latn-1930": null,
   
@@ -23858,7 +23876,7 @@ Opal.global.InterscriptMaps = {
   
 };
 
-Opal.global.InterscriptMapAliases = {"zho_Hani2Latn_AcadSin_2002":"acadsin-zho-Hani-Latn-2002","ara_Arab2Latn_ALA_1997":"alalc-ara-Arab-Latn-1997","uas_Arab2Latn_BGN_2007":"bgnpcgn-urd-Arab-Latn-2007","mar_Deva2Latn_ALA_1997":"alalc-mar-Deva-Latn-1997","ell_Grek2Latn_ELOT743_1996":"bgnpcgn-ell-Grek-Latn-1996","tam_Taml2Latn_ALA_2011":"alalc-tam-Taml-Latn-2011","bel_Cyrl2Latn_BGN_1979":"bgnpcgn-bel-Cyrl-Latn-1979","ori_Orya2Latn_ALA_2011":"alalc-ori-Orya-Latn-2011","kor_Hang2Latn_GKN_2002":"kp-kor-Hang-Latn-2002","zho_Hani2Latn_WDG_1979":"var-zho-Hani-Latn-wd-1979","kat_Geor2Latn_BGN_1981":"bgnpcgn-kat-Geor-Latn-1981","ukr_Cyrl2Latn_ALA_1997":"alalc-ukr-Cyrl-Latn-1997","mal_Mlym2Latn_ALA_2012":"alalc-mal-Mlym-Latn-2012","rus_Cyrl2Latn_ALA_1997":"alalc-rus-Cyrl-Latn-1997","ell_Grek2Latn_ALA_1997":"alalc-ell-Grek-Latn-1997","tgk_Cyrl2Latn_BGN_1994":"bgnpcgn-tgk-Cyrl-Latn-1994","hin_Deva2Latn_ALA_1997":"alalc-hin-Deva-Latn-1997","kor_Hang2Latn_MOCT_2000":"moct-kor-Hang-Latn-2000","tam_Taml2Latn_ALA_1997":"alalc-tam-Taml-Latn-1997","bul_Cyrl2Latn_BGN_2013":"bgnpcgn-bul-Cyrl-Latn-2013","ell_Grek2Latn_BGN_1962":"bgnpcgn-ell-Grek-Latn-1962","asm_Deva2Latn_ALA_1997":"alalc-asm-Deva-Latn-1997","ori_Orya2Latn_ALA_1997":"alalc-ori-Orya-Latn-1997","amh_Ethi2Latn_ALA_1997":"alalc-amh-Ethi-Latn-1997","kor_Hang2Latn_MR_1939":"bgn-kor-Hang-Latn-1943","bul_Cyrl2Latn_ALA_1997":"alalc-bul-Cyrl-Latn-1997","fas_Arab2Latn_BGN_1958":"bgnpcgn-fas-Arab-Latn-1956","kor_Hang2Latn_ALA_1997":"alalc-kor-Hang-Latn-1997","tha_Thai2Latn_RIT_1968":"royin-tha-Thai-Latn-1968","pan_Deva2Latn_ALA_2011":"alalc-pan-Guru-Latn-2011","amh_Ethi2Latn_BGN_1967":"bgnpcgn-amh-Ethi-Latn-1967","tir_Thai2Latn_RIT_2000":"royin-tha-Thai-Latn-1999","aze_Cyrl2Latn_ALA_1997":"alalc-aze-Cyrl-Latn-1997","mon_Cyrl2Latn_BGN_1964":"bgnpcgn-mon-Cyrl-Latn-1964","tat_Cyrl2Latn_BGN_2005":"bgnpcgn-tat-Cyrl-Latn-2007","bak_Cyrl2Latn_BGN_2007":"bgnpcgn-bak-Cyrl-Latn-2007","ben_Beng2Latn_ALA_1997":"alalc-ben-Beng-Latn-1997","sin_Sinh2Latn_ALA_2011":"alalc-sin-Sinh-Latn-2011","mal_Mlym2Latn_ALA_1997":"alalc-mal-Mlym-Latn-1997","sin_Sinh2Latn_ALA_1997":"alalc-sin-Sinh-Latn-1997","bel_Cyrl2Latn_GBO_1998":"by-bel-Cyrl-Latn-1998","kat_Geor2Latn_ALA_1997":"alalc-kat-Geor-Latn-1997","tel_Telu2Latn_ALA_1997":"alalc-tel-Telu-Latn-1997","kat_Geor2Latn_GGG_2002":"ggg-kat-Geor-Latn-2002","bel_Cyrl2Latn_ALA_1997":"alalc-bel-Cyrl-Latn-1997","ukr_Cyrl2Latn_BGN_1965":"bgnpcgn-ukr-Cyrl-Latn-1965","rus_Cyrl2Latn_GOST_1983":"gost-rus-Cyrl-Latn-16876-71-1983","mkd_Cyrl2Latn_BGN_1981":"bgnpcgn-mkd-Cyrl-Latn-1981","rus_Cyrl2Latn_BGN_1947":"bgnpcgn-rus-Cyrl-Latn-1947","srp_Cyrl2Latn_ALA_1997":"alalc-srp-Cyrl-Latn-1997","pan_Deva2Latn_ALA_1997":"alalc-pan-Guru-Latn-1997","aze_Arab2Latn_ALA_1997":"alalc-aze-Arab-Latn-1997","guj_Gujr2Latn_ALA_2011":"alalc-guj-Gujr-Latn-2011","guj_Gujr2Latn_ALA_1997":"alalc-guj-Gujr-Latn-1997","zho_Hani2Latn_GCH_1979":"sac-zho-Hans-Latn-1979","ukr_Cyrl2Latn_GUP_1996":"ua-ukr-Cyrl-Latn-1996","mon_Cyrl2Latn_ALA_1997":"alalc-mon-Cyrl-Latn-1997","ara_Arab2Latn_SES_1930":"ses-ara-Arab-Latn-1930","bul_Cyrl2Latn_BGN_1952":"bgnpcgn-bul-Cyrl-Latn-1952","srp_Cyrl2Latn_BGN_2005":"bgnpcgn-srp-Cyrl-Latn-2005","rue_Cyrl2Latn_BGN_2016":"bgnpcgn-rue-Cyrl-Latn-2016","ara_Arab2Latn_BGN_1956":"bgnpcgn-ara-Arab-Latn-1956"};
+Opal.global.InterscriptMapAliases = {"zho_Hani2Latn_AcadSin_2002":"acadsin-zho-Hani-Latn-2002","ara_Arab2Latn_ALA_1997":"alalc-ara-Arab-Latn-1997","uas_Arab2Latn_BGN_2007":"bgnpcgn-urd-Arab-Latn-2007","mar_Deva2Latn_ALA_1997":"alalc-mar-Deva-Latn-1997","ell_Grek2Latn_ELOT743_1996":"bgnpcgn-ell-Grek-Latn-1996","tam_Taml2Latn_ALA_2011":"alalc-tam-Taml-Latn-2011","bel_Cyrl2Latn_BGN_1979":"bgnpcgn-bel-Cyrl-Latn-1979","ori_Orya2Latn_ALA_2011":"alalc-ori-Orya-Latn-2011","kor_Hang2Latn_GKN_2002":"kp-kor-Hang-Latn-2002","zho_Hani2Latn_WDG_1979":"var-zho-Hani-Latn-wd-1979","kat_Geor2Latn_BGN_1981":"bgnpcgn-kat-Geor-Latn-1981","ukr_Cyrl2Latn_ALA_1997":"alalc-ukr-Cyrl-Latn-1997","mal_Mlym2Latn_ALA_2012":"alalc-mal-Mlym-Latn-2012","rus_Cyrl2Latn_ALA_1997":"alalc-rus-Cyrl-Latn-1997","ell_Grek2Latn_ALA_1997":"alalc-ell-Grek-Latn-1997","tgk_Cyrl2Latn_BGN_1994":"bgnpcgn-tgk-Cyrl-Latn-1994","hin_Deva2Latn_ALA_1997":"alalc-hin-Deva-Latn-1997","kor_Hang2Latn_MOCT_2000":"moct-kor-Hang-Latn-2000","tam_Taml2Latn_ALA_1997":"alalc-tam-Taml-Latn-1997","bul_Cyrl2Latn_BGN_2013":"bgnpcgn-bul-Cyrl-Latn-2013","ell_Grek2Latn_BGN_1962":"bgnpcgn-ell-Grek-Latn-1962","asm_Deva2Latn_ALA_1997":"alalc-asm-Deva-Latn-1997","ori_Orya2Latn_ALA_1997":"alalc-ori-Orya-Latn-1997","amh_Ethi2Latn_ALA_1997":"alalc-amh-Ethi-Latn-1997","kor_Hang2Latn_MR_1939":"bgn-kor-Hang-Latn-1943","bul_Cyrl2Latn_ALA_1997":"alalc-bul-Cyrl-Latn-1997","fas_Arab2Latn_BGN_1958":"bgnpcgn-fas-Arab-Latn-1956","kor_Hang2Latn_ALA_1997":"alalc-kor-Hang-Latn-1997","tha_Thai2Latn_RIT_1968":"royin-tha-Thai-Latn-1968","pan_Deva2Latn_ALA_2011":"alalc-pan-Guru-Latn-2011","amh_Ethi2Latn_BGN_1967":"bgnpcgn-amh-Ethi-Latn-1967","tir_Thai2Latn_RIT_2000":"royin-tha-Thai-Latn-1999","aze_Cyrl2Latn_ALA_1997":"alalc-aze-Cyrl-Latn-1997","mon_Cyrl2Latn_BGN_1964":"bgnpcgn-mon-Cyrl-Latn-1964","tat_Cyrl2Latn_BGN_2005":"bgnpcgn-tat-Cyrl-Latn-2007","bak_Cyrl2Latn_BGN_2007":"bgnpcgn-bak-Cyrl-Latn-2007","ben_Beng2Latn_ALA_1997":"alalc-ben-Beng-Latn-1997","sin_Sinh2Latn_ALA_2011":"alalc-sin-Sinh-Latn-2011","mal_Mlym2Latn_ALA_1997":"alalc-mal-Mlym-Latn-1997","sin_Sinh2Latn_ALA_1997":"alalc-sin-Sinh-Latn-1997","bel_Cyrl2Latn_GBO_1998":"by-bel-Cyrl-Latn-1998","kat_Geor2Latn_ALA_1997":"alalc-kat-Geor-Latn-1997","tel_Telu2Latn_ALA_1997":"alalc-tel-Telu-Latn-1997","kat_Geor2Latn_GGG_2002":"ggg-kat-Geor-Latn-2002","div_Thaa2Latn_ALA_1997":"alalc-div-Thaa-Latn-1997","bel_Cyrl2Latn_ALA_1997":"alalc-bel-Cyrl-Latn-1997","ukr_Cyrl2Latn_BGN_1965":"bgnpcgn-ukr-Cyrl-Latn-1965","rus_Cyrl2Latn_GOST_1983":"gost-rus-Cyrl-Latn-16876-71-1983","mkd_Cyrl2Latn_BGN_1981":"bgnpcgn-mkd-Cyrl-Latn-1981","rus_Cyrl2Latn_BGN_1947":"bgnpcgn-rus-Cyrl-Latn-1947","srp_Cyrl2Latn_ALA_1997":"alalc-srp-Cyrl-Latn-1997","pan_Deva2Latn_ALA_1997":"alalc-pan-Guru-Latn-1997","aze_Arab2Latn_ALA_1997":"alalc-aze-Arab-Latn-1997","guj_Gujr2Latn_ALA_2011":"alalc-guj-Gujr-Latn-2011","guj_Gujr2Latn_ALA_1997":"alalc-guj-Gujr-Latn-1997","div_Thaa2Latn_GMV_1988":"bgnpcgn-div-Thaa-Latn-1988","zho_Hani2Latn_GCH_1979":"sac-zho-Hans-Latn-1979","ukr_Cyrl2Latn_GUP_1996":"ua-ukr-Cyrl-Latn-1996","mon_Cyrl2Latn_ALA_1997":"alalc-mon-Cyrl-Latn-1997","ara_Arab2Latn_SES_1930":"ses-ara-Arab-Latn-1930","bul_Cyrl2Latn_BGN_1952":"bgnpcgn-bul-Cyrl-Latn-1952","srp_Cyrl2Latn_BGN_2005":"bgnpcgn-srp-Cyrl-Latn-2005","rue_Cyrl2Latn_BGN_2016":"bgnpcgn-rue-Cyrl-Latn-2016","ara_Arab2Latn_BGN_1956":"bgnpcgn-ara-Arab-Latn-1956"};
 };
 /* Generated by Opal 1.0.3 */
 Opal.modules["native"] = function(Opal) {

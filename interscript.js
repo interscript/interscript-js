@@ -23396,6 +23396,8 @@ Opal.global.InterscriptMaps = {
   
     "iso-tam-Taml-Latn-15919-2001": null,
   
+    "un-sin-Sinh-Latn-1972": null,
+  
     "odni-kor-Hang-Latn-2015": null,
   
     "icao-heb-Hebr-Latn-9303": null,
@@ -23404,9 +23406,13 @@ Opal.global.InterscriptMaps = {
   
     "var-zho-Hani-Latn-wd-1979": null,
   
+    "odni-pus-Arab-Latn-2011": null,
+  
     "elot-ell-Grek-Latn-743-1982-tl": null,
   
     "iso-tel-Telu-Latn-15919-2001": null,
+  
+    "un-guj-Gujr-Latn-1972": null,
   
     "bgnpcgn-kat-Geor-Latn-1981": null,
   
@@ -23423,6 +23429,8 @@ Opal.global.InterscriptMaps = {
     "var-san-Deva-Latn-iast-1912": null,
   
     "alalc-mal-Mlym-Latn-2012": null,
+  
+    "un-mal-Mlym-Latn-1972": null,
   
     "iso-prs-Arab-Latn-233-3-1999": null,
   
@@ -23519,6 +23527,8 @@ Opal.global.InterscriptMaps = {
     "alalc-ori-Orya-Latn-1997": null,
   
     "alalc-amh-Ethi-Latn-1997": null,
+  
+    "un-tam-Taml-Latn-1972": null,
   
     "icao-fas-Arab-Latn-9303": null,
   
@@ -23745,6 +23755,8 @@ Opal.global.InterscriptMaps = {
     "bis-guj-Gujr-Latn-13194-1991": null,
   
     "bgnpcgn-arm-Armn-Latn-1981": null,
+  
+    "bgnpcgn-div-Thaa-Latn-1972": null,
   
     "odni-tuk-Cyrl-Latn-2015": null,
   

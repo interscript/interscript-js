@@ -1,6 +1,6 @@
 {
   "name": "interscript",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Interscript JS bindings (Opal-generated)",
   "main": "interscript.opt.js",
   "repository": "git@github.com:interscript/interscript-js.git",

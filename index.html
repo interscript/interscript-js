@@ -1,64 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./style.css">
-    <script src="interscript.js"></script>
-  </head>
-  <body>
-    <h1 style="text-align: center;">Interscript in JavaScript</h1>
-    <div class="panel">
-      <div class="panel-input">
-        <label>System code: </label>
-        <select id="sc">
-        </select>
-      </div>
-      <div class="panel-input">
-        <div class="src">
-          <label>Source</label>
-          <textarea id="src"></textarea>
-        </div>
-        <div class="tar">
-          <label>Target</label>
-          <textarea id="tar"></textarea>
-        </div>
-      </div>
-      <div class="control">
-        <input type="button" value="Convert" onClick="convert()"/>
-      </div>
-    </div>
-  </body>
-  <script>
-    Opal.Interscript.$on_load().then(function() {
-      var select = document.getElementById("sc");
-      Object.keys(InterscriptMaps).forEach(sc => {
-        if (sc == "bgnpcgn-rus-Cyrl-Latn-1947") {
-          select.innerHTML += `<option value="${sc}" selected>${sc}</option>`;
-        } else {
-          select.innerHTML += `<option value="${sc}">${sc}</option>`;
-        }
-      })
-    });
-
-    function convert(){
-      var input = document.getElementById("src"),
-          output = document.getElementById("tar"),
-          sel = document.getElementById("sc");
-
-      if (!input.value) {
-        input.focus();
-        return;
-      };
-
-      const system_code = sel.options[sel.selectedIndex].text;
-      Opal.Interscript.$on_load_maps({maps: system_code}).then(function() {
-        var result = Opal.Interscript.$transliterate(system_code, input.value);
-        output.value = result;
-        alert('Successfully done!');
-      }).catch(function(error) {
-        console.log(error);
-        alert("Couldn't load a map due to: "+error);
-      });
-    }
-  </script>
+    <head>
+        <meta charset='utf-8'>
+        <script type="text/javascript" src="./node_modules/xregexp/xregexp-all.js"></script>
+        <script type="text/javascript" src="./src/stdlib.js"></script>
+        <script>
+            Interscript.map_path = "./src/maps/";
+            Interscript.load_map('bgnpcgn-ukr-Cyrl-Latn-2019').then(function() {
+                alert(Interscript.transliterate('bgnpcgn-ukr-Cyrl-Latn-2019', prompt()));
+            });
+        </script>
+    </head>
+    <!-- Run it this way:
+      -- npm install
+      -- npm run prepareMaps
+      -- chromium-browser --no-sandbox --allow-file-access-from-files ./index.html
+      -->
+    <body></body>
 </html>

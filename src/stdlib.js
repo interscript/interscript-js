@@ -30,51 +30,83 @@ var Interscript = {
     return Promise.all(promises);
   },
   map_path: "./maps/",
-  load_map: function (map) {
-    // adding the script tag to the head as suggested before
+
+  _load_path: function(path, type) {
     return new Promise(
       function (resolve, reject) {
-        if (this.maps[map]) {
-          resolve();
-          return;
-        }
         try {
           if (typeof document !== "undefined") {
-            var head = document.getElementsByTagName("head")[0];
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            script.src = this.map_path + map + ".js";
-            // then bind the event to the callback function
-            // there are several events for cross browser compatibility
-            script.onload = function (scr) {
-              // map dependencies
-              this.map_dependencies(this.maps[map].dependencies).then(resolve);
-            }.bind(this);
-            // fire the loading
-            head.appendChild(script);
-          } else if (typeof global !== "undefined") {
-            var node_require = eval("require"); // webpack hack
-            node_require(this.map_path + map)(this);
-            this.map_dependencies(this.maps[map].dependencies).then(resolve);
+            if (type == "jseval") {
+              var head = document.getElementsByTagName("head")[0];
+              var script = document.createElement("script");
+              script.type = "text/javascript";
+              script.src = path + ".js";
+              // then bind the event to the callback function
+              script.onload = resolve;
+              // fire the loading
+              head.appendChild(script);
+            }
+            else if (type == "json") {
+              var is_local = false;
+              if (typeof document !== "undefined" &&
+                  typeof document.location !== "undefined" &&
+                  typeof document.location.protocol !== "undefined") {
+                    is_local = document.location.protocol == "file:";
+                  }
+
+              var httpRequest = new XMLHttpRequest();
+              httpRequest.onreadystatechange = function() {
+                if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                  if (httpRequest.responseText) {
+                    resolve(JSON.parse(httpRequest.responseText));
+                  }
+                  else {
+                    if (is_local) {
+                      console.log(httpRequest.responseText);
+                      reject("Ajax failed load: "+path+". Status: "+httpRequest.statusText+". "+
+                        "Are you running this locally? Try adding: "+
+                        "--allow-file-access-from-files to your Chromium command line.")
+                    }
+                    else reject("Ajax failed load: "+path+". Status: "+httpRequest.statusText);
+                  }
+                }
+              };
+              httpRequest.open('GET', path+".json", true);
+              httpRequest.send();
+            }
           }
-        } catch (e) {
+          else if (typeof global !== "undefined") {
+            var node_require = eval("require"); // webpack hack
+            var fun = node_require(path);
+            if (type == "jseval") {
+              resolve(fun(this));
+            }
+            else if (type == "json") {
+              resolve(fun);
+            }
+          }
+        }
+        catch(e) {
           reject(e);
         }
       }.bind(this)
     );
   },
 
+  load_map: function (map) {
+    var prom;
+    if (this.maps[map]) prom = Promise.resolve();
+    else prom = this._load_path(this.map_path + map, "jseval");
+
+    return prom.then(function() {
+      return this.map_dependencies(this.maps[map].dependencies);
+    }.bind(this));
+  },
+
   load_map_list: function () {
-    return new Promise(
-      function (ok, fail) {
-        if (typeof module !== "undefined") {
-          this.maps = require(this.map_path);
-          ok();
-        } else {
-          fail("Not implemented");
-        }
-      }.bind(this)
-    );
+    return this._load_path(this.map_path + "index", "json").then(function (out) { 
+      this.maps = out;
+    }.bind(this));
   },
 
   correct_boundaries: function () {

@@ -1,6 +1,6 @@
 {
   "name": "interscript",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Interscript JS bindings",
   "main": "./src/stdlib.js",
   "repository": "git@github.com:interscript/interscript.git",
@@ -18,5 +18,11 @@
   },
   "devDependencies": {
     "mocha": "^8.1.3"
-  }
+  },
+  "files": [
+    "index.html",
+    "/src",
+    "/test",
+    "/test-compiler"
+  ]
 }

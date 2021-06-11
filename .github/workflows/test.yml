@@ -61,6 +61,6 @@ jobs:
           ${{ runner.os }}-node-${{ matrix.node-version }}-version-
   
     - run: pushd js && npm install && popd
-    - run: pushd js && npm prepareMaps && popd
+    - run: pushd js && npm run prepareMaps && popd
     - run: pushd js && npm test && popd
 

@@ -1,6 +1,6 @@
-= Interscript-JS: Interoperable Script Conversion Systems for JavaScript
+# Interscript-JS: Interoperable Script Conversion Systems for JavaScript
 
-== Purpose
+## Purpose
 
 This repository contains code for the Interscript JavaScript runtime ("Interscript-JS").
 
@@ -13,7 +13,7 @@ and provides executable runtimes for multiple platforms.
 Full documentation available https://github.com/interscript/interscript/[here].
 
 
-== Integration
+## Integration
 
 This section provides instructions on how to utilize Interscript-JS
 with your application.
@@ -21,24 +21,22 @@ with your application.
 Interscript-JS can be used as a JS NPM library and integrated with
 other JS applications.
 
-=== Configuration for NPM
+### Configuration for NPM
 
-[source,shell]
-----
+```shell
 $ npm install interscript
-----
+```
 
 == Usage
 
 === Usage in Node.js
 
-[source,javascript]
------
+```javascript
 var Interscript = require('interscript');
 Interscript.load_map('bgnpcgn-ukr-Cyrl-Latn-2019').then(function() {
   alert(Interscript.transliterate('bgnpcgn-ukr-Cyrl-Latn-2019', prompt()));
 });
------
+```
 
 
 === Usage in web browsers
@@ -53,22 +51,20 @@ supply a path to the maps, as those are not bundled by default.
 
 To do so, you need to do something like:
 
-[source,javascript]
------
+```javascript
 Interscript.map_path = "/node_modules/interscript/src/maps/";
------
+```
 
 
 === Getting a list of available maps
 
 The following code retrieves the full list of maps available.
 
-[source,javascript]
------
+```javascript
 Interscript.load_map_list().then(function() {
   var list = Interscript.map_list();
 });
------
+```
 
 
 == Copyright & license

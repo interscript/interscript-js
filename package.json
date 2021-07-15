@@ -1,6 +1,6 @@
 {
   "name": "interscript",
-  "version": "2.1.0b6",
+  "version": "2.1.0b7",
   "description": "Interscript JS bindings",
   "main": "./src/stdlib.js",
   "repository": "git@github.com:interscript/interscript.git",

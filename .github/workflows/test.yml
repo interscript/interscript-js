@@ -2,7 +2,7 @@ name: js
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, v* ]
   pull_request:
 
 jobs:
@@ -15,18 +15,13 @@ jobs:
         node-version: [10.x, 12.x, 14.x]
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
       with:
         repository: interscript/interscript
-        submodules: true
-    
-    - run: |
-        rm -rf js
-        mkdir js
 
-    - uses: actions/checkout@v2
-      with:
-        path: js
+    - name: Run a bootstrap script
+      run: ruby bootstrap.rb
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1

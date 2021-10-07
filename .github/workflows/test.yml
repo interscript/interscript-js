@@ -20,15 +20,15 @@ jobs:
       with:
         repository: interscript/interscript
 
-    - name: Run a bootstrap script
+    - name: Run bootstrap script
       run: ruby bootstrap.rb
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7
-    
-    - name: cache ruby gems
+
+    - name: Cache Ruby gems
       uses: actions/cache@v2
       env:
         cache-name: cache-ruby-modules
@@ -37,25 +37,36 @@ jobs:
         key: ${{ runner.os }}-ruby-2.7-gems-${{ hashFiles('**/interscript.gemspec') }}
         restore-keys: |
           ${{ runner.os }}-ruby-2.7-gems-
-    
-    - run: |
-        bundle config path vendor/bundle
-        pushd ruby && bundle install --jobs 4 --retry 3 --with jsexec --without secryst && popd
+
+    - name: Configure bundle to use vendor mode
+      run: bundle config path vendor/bundle
+
+    - name: Install bundle
+      working-directory: ./ruby
+      run: |
+        bundle install --jobs 4 --retry 3 --with jsexec --without secryst
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: cache npm packages
+    - name: Cache NPM packages
       uses: actions/cache@v2
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ matrix.node-version }}-version-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-${{ matrix.node-version }}-version-
-  
-    - run: pushd js && npm install && popd
-    - run: pushd js && npm run prepareMaps && popd
-    - run: pushd js && npm test && popd
 
+    - name: Install NPM packages
+      working-directory: ./js
+      run: npm install
+
+    - name: Run prepareMaps
+      working-directory: ./js
+      run: npm run prepareMaps
+
+    - name: Run tests
+      working-directory: ./js
+      run: npm test

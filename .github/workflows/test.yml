@@ -44,6 +44,12 @@ jobs:
         working-directory: js
         run: npm ci
 
+      - name: Lint (ESLint + Prettier)
+        working-directory: js
+        run: |
+          npm run lint
+          npm run format:check
+
       - name: prepareMaps
         working-directory: js
         run: npm run prepareMaps
@@ -51,3 +57,16 @@ jobs:
       - name: Test
         working-directory: js
         run: npm test
+
+  lint-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check

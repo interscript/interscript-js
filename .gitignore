@@ -1,2 +1,5 @@
 /src/maps
 /node_modules
+
+# Legacy Opal bundle — do not commit (TS port will remove this entirely)
+interscript.js

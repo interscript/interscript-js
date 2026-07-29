@@ -31,12 +31,12 @@ var Interscript = {
   },
   map_path: "./maps/",
 
-  _load_path: function(path, type) {
+  _load_path: function (path, type) {
     return new Promise(
       function (resolve, reject) {
         try {
           if (typeof document !== "undefined") {
-            if (type == "jseval") {
+            if (type === "jseval") {
               var head = document.getElementsByTagName("head")[0];
               var script = document.createElement("script");
               script.type = "text/javascript";
@@ -45,48 +45,51 @@ var Interscript = {
               script.onload = resolve;
               // fire the loading
               head.appendChild(script);
-            }
-            else if (type == "json") {
+            } else if (type === "json") {
               var is_local = false;
-              if (typeof document !== "undefined" &&
-                  typeof document.location !== "undefined" &&
-                  typeof document.location.protocol !== "undefined") {
-                    is_local = document.location.protocol == "file:";
-                  }
+              if (
+                typeof document !== "undefined" &&
+                typeof document.location !== "undefined" &&
+                typeof document.location.protocol !== "undefined"
+              ) {
+                is_local = document.location.protocol === "file:";
+              }
 
               var httpRequest = new XMLHttpRequest();
-              httpRequest.onreadystatechange = function() {
+              httpRequest.onreadystatechange = function () {
                 if (httpRequest.readyState === XMLHttpRequest.DONE) {
                   if (httpRequest.responseText) {
                     resolve(JSON.parse(httpRequest.responseText));
-                  }
-                  else {
+                  } else {
                     if (is_local) {
                       console.log(httpRequest.responseText);
-                      reject("Ajax failed load: "+path+". Status: "+httpRequest.statusText+". "+
-                        "Are you running this locally? Try adding: "+
-                        "--allow-file-access-from-files to your Chromium command line.")
-                    }
-                    else reject("Ajax failed load: "+path+". Status: "+httpRequest.statusText);
+                      reject(
+                        "Ajax failed load: " +
+                          path +
+                          ". Status: " +
+                          httpRequest.statusText +
+                          ". " +
+                          "Are you running this locally? Try adding: " +
+                          "--allow-file-access-from-files to your Chromium command line."
+                      );
+                    } else
+                      reject("Ajax failed load: " + path + ". Status: " + httpRequest.statusText);
                   }
                 }
               };
-              httpRequest.open('GET', path+".json", true);
+              httpRequest.open("GET", path + ".json", true);
               httpRequest.send();
             }
-          }
-          else if (typeof global !== "undefined") {
+          } else if (typeof global !== "undefined") {
             var node_require = eval("require"); // webpack hack
             var fun = node_require(path);
-            if (type == "jseval") {
+            if (type === "jseval") {
               resolve(fun(this));
-            }
-            else if (type == "json") {
+            } else if (type === "json") {
               resolve(fun);
             }
           }
-        }
-        catch(e) {
+        } catch (e) {
           reject(e);
         }
       }.bind(this)
@@ -98,15 +101,19 @@ var Interscript = {
     if (this.maps[map]) prom = Promise.resolve();
     else prom = this._load_path(this.map_path + map, "jseval");
 
-    return prom.then(function() {
-      return this.map_dependencies(this.maps[map].dependencies);
-    }.bind(this));
+    return prom.then(
+      function () {
+        return this.map_dependencies(this.maps[map].dependencies);
+      }.bind(this)
+    );
   },
 
   load_map_list: function () {
-    return this._load_path(this.map_path + "index", "json").then(function (out) { 
-      this.maps = out;
-    }.bind(this));
+    return this._load_path(this.map_path + "index", "json").then(
+      function (out) {
+        this.maps = out;
+      }.bind(this)
+    );
   },
 
   correct_boundaries: function () {
@@ -145,13 +152,7 @@ var Interscript = {
       "))";
   },
 
-  available_functions: [
-    "title_case",
-    "downcase",
-    "compose",
-    "decompose",
-    "separate",
-  ],
+  available_functions: ["title_case", "downcase", "compose", "decompose", "separate"],
 
   mkregexp: function (str) {
     return this.XRegExp(str, "g");
@@ -201,7 +202,7 @@ var Interscript = {
   },
 
   parallel_regexp_gsub: function (s, data) {
-    return this.XRegExp.replace(s, this.mkregexp(data[0]), function (match) {
+    return this.XRegExp.replace(s, this.mkregexp(data[0]), function (_match) {
       var matches = arguments[arguments.length - 1];
       var idx;
       for (var i in matches) {
@@ -240,7 +241,7 @@ var Interscript = {
     return typeof this.maps[map] !== "undefined";
   },
 
-  map_list: function (map) {
+  map_list: function () {
     return Object.keys(this.maps);
   },
 
@@ -255,7 +256,7 @@ var Interscript = {
       output = output.replace(/(^|\n)(.)/g, function (a) {
         return a.toUpperCase();
       });
-      if (opts.word_separator != "") {
+      if (opts.word_separator !== "") {
         var sep = Interscript.regexp_escape(opts.word_separator);
         output = output.replace(new RegExp(sep + "(.)", "g"), function (a) {
           return a.toUpperCase();
@@ -264,15 +265,15 @@ var Interscript = {
       return output;
     },
 
-    downcase: function (output, opts) {
+    downcase: function (output, _opts) {
       return output.toLowerCase();
     },
 
-    compose: function (output, opts) {
+    compose: function (output, _opts) {
       return output.normalize("NFC");
     },
 
-    decompose: function (output, opts) {
+    decompose: function (output, _opts) {
       return output.normalize("NFD");
     },
 

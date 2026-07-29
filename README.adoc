@@ -1,3 +1,4 @@
+image:https://github.com/interscript/interscript-js/actions/workflows/js.yml/badge.svg["CI status", link="https://github.com/interscript/interscript-js/actions/workflows/js.yml"]
 = Interscript-JS: Interoperable Script Conversion Systems for JavaScript
 
 == Purpose

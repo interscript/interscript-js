@@ -18,9 +18,7 @@ describe("frozen conformance fixtures", () => {
   it.skipIf(!e2eZip || !conformanceVectors)(
     "reproduces the vectors byte-exactly (single-row-greedy)",
     async () => {
-      const vectors = JSON.parse(
-        readFileSync(conformanceVectors!, "utf-8"),
-      ) as {
+      const vectors = JSON.parse(readFileSync(conformanceVectors!, "utf-8")) as {
         model: string
         decode: { mode: string }
         vectors: { src: string; out: string }[]

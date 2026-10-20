@@ -5,11 +5,13 @@
 
 TypeScript runtime for [Interscript](https://www.interscript.org) — interoperable script conversion systems.
 
-A TypeScript-native port of the [Ruby runtime](https://github.com/interscript/interscript-ruby), designed for modern Node.js, bundlers, and the browser. Consumes JSON IR (intermediate representation) emitted by the Ruby gem's `Compiler::JsonIR`.
+Interscript turns the world's transliteration standards from paper tables into executable, verifiable software: authority schemes encoded once in the ISC language, every runtime producing provably identical output, neural models under the same proof regime.
+
+A TypeScript-native engine (a port of the [Ruby runtime](https://github.com/interscript/interscript-ruby)) for modern Node.js, bundlers, and the browser. Parses ISC maps directly (`iscStrategy`); a legacy JSON IR loader remains for precompiled bundles.
 
 ## Status
 
-🟡 **v0.1 — preview.** 4/5 sample maps achieve byte-exact Ruby parity. See [TODO.complete/42](https://github.com/interscript/interscript/blob/main/TODO.complete/42-parallel-rule-semantics.md) for the remaining gap.
+Cross-runtime parity against the Ruby interpreter runs in CI on every push (`npm run test:parity`), releases re-pin the neural-model index and ship the conformance harness (see the [conformance contract](https://github.com/interscript/interscript-models/tree/main/conformance) in interscript-models). Project direction: [interscript-models README](https://github.com/interscript/interscript-models#direction-audit-2026-10).
 
 ## Installation
 

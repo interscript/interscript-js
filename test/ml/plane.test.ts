@@ -48,7 +48,9 @@ describe("PlaneModel.transform", () => {
     const model = await createPlaneModel(fixture())
     const text = "الرجل ثائر في البيت الكبير"
     const out = await model.transform(text)
-    const plain = Array.from(out).filter((c) => !model.classes.includes(c)).join("")
+    const plain = Array.from(out)
+      .filter((c) => !model.classes.includes(c))
+      .join("")
     expect(plain).toBe(text)
   })
 

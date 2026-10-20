@@ -18,12 +18,4 @@ export {
 } from "./registry.js"
 export { pickTier, warmUp, type TierCandidate } from "./tiers.js"
 export { normalizeArabicInput, repetitionGuardCut } from "./guards.js"
-export {
-  encode,
-  decode,
-  firstAlternates,
-  BYTE_OFFSET,
-  EOS_ID,
-  PAD_ID,
-  UNK_ID,
-} from "./tokens.js"
+export { encode, decode, firstAlternates, BYTE_OFFSET, EOS_ID, PAD_ID, UNK_ID } from "./tokens.js"

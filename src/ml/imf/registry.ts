@@ -256,8 +256,7 @@ export interface ResolvedZip {
 
 const RELEASE_ORIGIN = "https://github.com/interscript/interscript-models/releases/download/"
 const CORS_FRONT_DOOR = "https://api.interscript.org/v1/assets/"
-const LEGACY_RELEASE_ORIGIN =
-  "https://github.com/interscript/interscript-ml/releases/download/"
+const LEGACY_RELEASE_ORIGIN = "https://github.com/interscript/interscript-ml/releases/download/"
 
 /** In browsers, GH Releases are not CORS-fetchable (the github.com
  * redirect hop lacks ACAO); rewrite release URLs to the API's
@@ -304,7 +303,8 @@ export async function resolve(
 ): Promise<ResolvedZip> {
   const env = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process
     ?.env
-  const source = indexUrl ?? env?.["INTERSCRIPT_ML_INDEX"] ?? env?.["SECRYST_INDEX"] ?? DEFAULT_INDEX_URL
+  const source =
+    indexUrl ?? env?.["INTERSCRIPT_ML_INDEX"] ?? env?.["SECRYST_INDEX"] ?? DEFAULT_INDEX_URL
   let entries: Record<string, IndexEntry>
   try {
     entries = await fetchIndex(source)

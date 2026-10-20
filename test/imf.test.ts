@@ -270,7 +270,10 @@ describe("registry", () => {
     const { join } = await import("node:path")
     const { resolve } = await import("../src/ml/imf/registry.js")
     const dir = mkdtempSync(join(tmpdir(), "imf-envvar-"))
-    writeFileSync(join(dir, "models.yaml"), "version: 1\nmodels:\n  tiny-1.0:\n    filename: t.zip\n    sha256: x\n")
+    writeFileSync(
+      join(dir, "models.yaml"),
+      "version: 1\nmodels:\n  tiny-1.0:\n    filename: t.zip\n    sha256: x\n",
+    )
     const prev = process.env["SECRYST_INDEX"]
     try {
       process.env["INTERSCRIPT_ML_INDEX"] = join(dir, "models.yaml")

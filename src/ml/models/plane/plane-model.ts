@@ -31,8 +31,7 @@ interface PlaneManifest {
 }
 
 async function sha256Hex(data: Uint8Array): Promise<string> {
-  const digest = await crypto.subtle.digest(
-    "SHA-256", new Uint8Array(data).buffer as ArrayBuffer)
+  const digest = await crypto.subtle.digest("SHA-256", new Uint8Array(data).buffer as ArrayBuffer)
   return Array.from(new Uint8Array(digest))
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("")
@@ -75,7 +74,10 @@ function argmaxRow(logits: Float32Array, offset: number, width: number): number 
   let bestV = -Infinity
   for (let i = 0; i < width; i++) {
     const v = logits[offset + i]!
-    if (v > bestV) { bestV = v; best = i }
+    if (v > bestV) {
+      bestV = v
+      best = i
+    }
   }
   return best
 }
@@ -88,9 +90,7 @@ export class PlaneModel implements MLModel {
   private readonly markChars: ReadonlySet<string>
   private readonly classToId: ReadonlyMap<string, number>
 
-  private constructor(
-    session: InferenceSession, classes: readonly string[], kPasses: number,
-  ) {
+  private constructor(session: InferenceSession, classes: readonly string[], kPasses: number) {
     this.session = session
     this.classes = classes
     this.kPasses = kPasses
@@ -133,7 +133,10 @@ export class PlaneModel implements MLModel {
       current = []
     }
     for (const ch of text) {
-      if (this.markChars.has(ch)) { current.push(ch); continue }
+      if (this.markChars.has(ch)) {
+        current.push(ch)
+        continue
+      }
       close()
       skeleton.push(ch)
       classes.push("")
@@ -143,7 +146,8 @@ export class PlaneModel implements MLModel {
   }
 
   private async decodePinned(
-    skeleton: string[], pinned: ReadonlyArray<string | undefined>,
+    skeleton: string[],
+    pinned: ReadonlyArray<string | undefined>,
   ): Promise<number[]> {
     const ids = encodeByt5(skeleton.join(""))
     ids.pop() // trailing EOS: one token per byte
@@ -151,14 +155,18 @@ export class PlaneModel implements MLModel {
     const mask = this.classes.length
     skeleton.forEach((ch, i) => {
       const cls = pinned[i]
-      const pid = cls === undefined || cls === "" ? mask : this.classToId.get(cls) ?? mask
+      const pid = cls === undefined || cls === "" ? mask : (this.classToId.get(cls) ?? mask)
       for (let b = 0; b < byteLen(ch); b++) pinPerToken.push(pid)
     })
     const pinnedIdx: number[] = []
-    pinPerToken.forEach((p, i) => { if (p !== mask) pinnedIdx.push(i) })
+    pinPerToken.forEach((p, i) => {
+      if (p !== mask) pinnedIdx.push(i)
+    })
 
     let plane = ids.map(() => mask)
-    pinnedIdx.forEach((i) => { plane[i] = pinPerToken[i]! })
+    pinnedIdx.forEach((i) => {
+      plane[i] = pinPerToken[i]!
+    })
     for (let pass = 0; pass < this.kPasses; pass++) {
       const out = await this.session.run({
         input_ids: int64Tensor("input_ids", ids),
@@ -171,7 +179,9 @@ export class PlaneModel implements MLModel {
       for (let t = 0; t < ids.length; t++) {
         next.push(argmaxRow(data, t * width, width))
       }
-      pinnedIdx.forEach((i) => { next[i] = pinPerToken[i]! })
+      pinnedIdx.forEach((i) => {
+        next[i] = pinPerToken[i]!
+      })
       plane = next
     }
     return plane
@@ -198,8 +208,10 @@ function byteLen(ch: string): number {
 }
 
 function render(
-  skeleton: string[], classes: readonly string[],
-  preds: readonly number[], allClasses: readonly string[],
+  skeleton: string[],
+  classes: readonly string[],
+  preds: readonly number[],
+  allClasses: readonly string[],
 ): string {
   const mask = allClasses.length
   let pos = 0
@@ -215,7 +227,12 @@ function render(
         votes.forEach((v) => counts.set(v, (counts.get(v) ?? 0) + 1))
         let best = votes[0]!
         let bestC = -1
-        counts.forEach((c, v) => { if (c > bestC) { bestC = c; best = v } })
+        counts.forEach((c, v) => {
+          if (c > bestC) {
+            bestC = c
+            best = v
+          }
+        })
         cls = best < mask ? allClasses[best]! : ""
       }
     }

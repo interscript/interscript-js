@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { spawnSync } from "node:child_process"
-import { resolve } from "node:path"
+import { resolve, join } from "node:path"
 import { fileURLToPath } from "node:url"
 import { dirname } from "node:path"
 import { writeFileSync, mkdtempSync } from "node:fs"
@@ -111,7 +111,11 @@ describe("CLI", () => {
 
 describe("CLI ml", () => {
   it("rejects unknown model ids with the resolver's message", () => {
-    const r = runCli(["ml", "nope-9.9"], "hello")
+    // hermetic: a local index exercises the resolver's unknown-id path
+    // without a network fetch of the live release index
+    const index = join(mkdtempSync(join(tmpdir(), "isx-idx-")), "index.yaml")
+    writeFileSync(index, "version: 1\nmodels: {}\n")
+    const r = runCli(["ml", "nope-9.9", "--index", index], "hello")
     expect(r.status).toBe(1)
     expect(r.stderr).toContain("unknown model id")
   })

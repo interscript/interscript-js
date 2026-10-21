@@ -98,7 +98,10 @@ jobs:
         run: |
           mkdir -p fixtures && cd fixtures
           dl() { # dl <tag> <asset-name> <out>
-            local id=$(gh api repos/interscript/interscript-models/releases/tags/$1 --jq ".assets[] | select(.name==\"$2\") | .id")
+            local id
+            id=$(gh api repos/interscript/interscript-models/releases/tags/$1 --jq ".assets[] | select(.name==\"$2\") | .id")
+            echo "dl $1 / $2 -> asset id: '$id'"
+            if [ -z "$id" ]; then echo "ASSET NOT FOUND: $2 on $1"; return 1; fi
             gh api -H "Accept: application/octet-stream" repos/interscript/interscript-models/releases/assets/$id > "$3"
           }
           dl index-v12 models-index.yaml models-index.yaml

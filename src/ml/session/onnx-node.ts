@@ -62,7 +62,11 @@ class NodeInferenceSession implements InferenceSession {
 
   static async create(modelData: ArrayBuffer | Uint8Array): Promise<NodeInferenceSession> {
     const ort = await loadOrt()
-    const session = await ort.InferenceSession.create(modelData)
+    // single-thread decode: the conformance contract is byte-exact
+    // across environments (WO79); multi-thread fp16 ties flip rows
+    const session = await ort.InferenceSession.create(modelData, {
+      intraOpNumThreads: 1,
+    })
     return new NodeInferenceSession(session, ort)
   }
 

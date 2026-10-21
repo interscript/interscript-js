@@ -105,10 +105,7 @@ jobs:
           # the two single-zip models; urd-g2p (split parts) resolves
           # via the runtime resolver in a later matrix pass
           for m in urd-diac-base-1.0 fas-diac-base-1.0; do
-            url=$(node -e "const y=require('./models-index.yaml')" 2>/dev/null || node -e "
-              const fs=require('fs');const t=fs.readFileSync('models-index.yaml','utf8');
-              const m=t.match(new RegExp('$m:[\\\\s\\\\S]*?url:\\\\s*(\\\\S+)'));
-              console.log(m[1])")
+            url=$(sed -n "/^  $m:/,/^  [a-z]/p" models-index.yaml | grep -m1 'url:' | awk '{print $2}')
             curl -fsSL -o "$m.zip" "$url"
           done
       - name: Run the matrix

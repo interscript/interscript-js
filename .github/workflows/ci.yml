@@ -81,3 +81,43 @@ jobs:
         with:
           name: coverage-report
           path: coverage/
+
+  conformance-matrix:
+    name: Conformance matrix (frozen fixtures)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Download fixtures (GitHub Releases channel)
+        run: |
+          mkdir -p fixtures && cd fixtures
+          BASE="https://github.com/interscript/interscript-models/releases/download"
+          curl -fsSL -o models-index.yaml "$BASE/index-v12/models-index.yaml"
+          curl -fsSL -o models-index.yaml.sha256 "$BASE/index-v12/models-index.yaml.sha256"
+          sha256sum -c models-index.yaml.sha256
+          for v in urd-diac-base fas-diac-base urd-g2p-base; do
+            curl -fsSL -O "$BASE/index-v12/$v-vectors.json"
+          done
+          # the two single-zip models; urd-g2p (split parts) resolves
+          # via the runtime resolver in a later matrix pass
+          for m in urd-diac-base-1.0 fas-diac-base-1.0; do
+            url=$(node -e "const y=require('./models-index.yaml')" 2>/dev/null || node -e "
+              const fs=require('fs');const t=fs.readFileSync('models-index.yaml','utf8');
+              const m=t.match(new RegExp('$m:[\\\\s\\\\S]*?url:\\\\s*(\\\\S+)'));
+              console.log(m[1])")
+            curl -fsSL -o "$m.zip" "$url"
+          done
+      - name: Run the matrix
+        run: |
+          for pair in "urd-diac-base-1.0 urd-diac-base" "fas-diac-base-1.0 fas-diac-base"; do
+            set -- $pair
+            echo "::group::$1"
+            SECRYST_E2E_ZIP="$PWD/fixtures/$1.zip" \
+              CONFORMANCE_VECTORS="$PWD/fixtures/$2-vectors.json" \
+              npx vitest run test/conformance.test.ts
+            echo "::endgroup::"
+          done

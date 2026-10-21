@@ -25,7 +25,10 @@ type OnnxNodeSession = {
 
 interface OnnxNodeModule {
   InferenceSession: {
-    create(modelData: ArrayBuffer | Uint8Array): Promise<OnnxNodeSession>
+    create(
+      modelData: ArrayBuffer | Uint8Array,
+      options?: { intraOpNumThreads?: number },
+    ): Promise<OnnxNodeSession>
   }
   Tensor: new (type: string, data: TensorData, dims: readonly number[]) => unknown
 }

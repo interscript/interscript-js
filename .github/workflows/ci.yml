@@ -92,21 +92,28 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Download fixtures (GitHub Releases channel)
+      - name: Download fixtures (Releases via the API -- bypasses the asset-redirect CDN, which served stale entries after the WO79 republish)
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p fixtures && cd fixtures
-          BASE="https://github.com/interscript/interscript-models/releases/download"
-          curl -fsSL -o models-index.yaml "$BASE/index-v12/models-index.yaml"
-          curl -fsSL -o models-index.yaml.sha256 "$BASE/index-v12/models-index.yaml.sha256"
+          dl() { # dl <tag> <asset-name> <out>
+            local id
+            id=$(gh api repos/interscript/interscript-models/releases/tags/$1 --jq ".assets[] | select(.name==\"$2\") | .id")
+            echo "dl $1 / $2 -> asset id: '$id'"
+            if [ -z "$id" ]; then echo "ASSET NOT FOUND: $2 on $1"; return 1; fi
+            gh api -H "Accept: application/octet-stream" repos/interscript/interscript-models/releases/assets/$id > "$3"
+          }
+          dl index-v12 models-index.yaml models-index.yaml
+          dl index-v12 models-index.yaml.sha256 models-index.yaml.sha256
           sha256sum -c models-index.yaml.sha256
           for v in urd-diac-base fas-diac-base urd-g2p-base; do
-            curl -fsSL -O "$BASE/index-v12/$v-vectors.json"
+            dl index-v12 $v-vectors.json $v-vectors.json
           done
           # the two single-zip models; urd-g2p (split parts) resolves
           # via the runtime resolver in a later matrix pass
           for m in urd-diac-base-1.0 fas-diac-base-1.0; do
-            url=$(sed -n "/^  $m:/,/^  [a-z]/p" models-index.yaml | grep -m1 'url:' | awk '{print $2}')
-            curl -fsSL -o "$m.zip" "$url"
+            dl $m $m-fp16.zip $m.zip
           done
       - name: Run the matrix
         run: |

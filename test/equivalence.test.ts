@@ -54,9 +54,7 @@ describe("checkEquivalence (A3)", () => {
     expect(r.tested).toBe(2)
     expect(r.matched).toBe(1)
     expect(r.ratio).toBe(0.5)
-    expect(r.distinguishing).toEqual([
-      { sample: "ba", first: "bx", second: "by" },
-    ])
+    expect(r.distinguishing).toEqual([{ sample: "ba", first: "bx", second: "by" }])
   })
 
   it("empty sample set is vacuously equivalent", () => {
